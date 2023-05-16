@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:malhar_2023/pages/contact.dart';
+import 'package:sidebarx/sidebarx.dart';
+import 'package:get/get.dart';
+
+import 'components/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Landing page',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home Page'),
     );
   }
 }
@@ -30,68 +35,156 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  final _controller = SidebarXController(selectedIndex: 0, extended: true);
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        title: Text(
+          widget.title,
+          textAlign: TextAlign.center,
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      // drawer: ExampleSidebarX(controller: _controller),
+      drawer: const CustomDrawer(),
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/bg.png'), fit: BoxFit.cover)),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                '',
+              )
+            ],
+          ),
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+class ExampleSidebarX extends StatelessWidget {
+  ExampleSidebarX({
+    Key? key,
+    required SidebarXController controller,
+  })  : _controller = controller,
+        super(key: key);
+
+  final SidebarXController _controller;
+
+  final height = AppBar().preferredSize.height;
+
+  @override
+  Widget build(BuildContext context) {
+    var statusbarheight = MediaQuery.of(context).viewPadding.top;
+
+    return SidebarX(
+      controller: _controller,
+      theme: SidebarXTheme(
+        margin: EdgeInsets.fromLTRB(10, height + statusbarheight, 0, 10),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(colors: [
+            Color.fromRGBO(169, 171, 220, 1),
+            Color.fromRGBO(212, 191, 212, 1)
+          ], transform: GradientRotation(2.7)),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        hoverColor: scaffoldBackgroundColor,
+        textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+        selectedTextStyle: const TextStyle(color: Colors.white),
+        itemTextPadding: const EdgeInsets.only(left: 30),
+        itemPadding: const EdgeInsets.symmetric(vertical: 15),
+        selectedItemMargin: const EdgeInsets.symmetric(horizontal: 5),
+        itemMargin: const EdgeInsets.symmetric(horizontal: 5),
+        selectedItemPadding: const EdgeInsets.symmetric(vertical: 15),
+        selectedItemTextPadding: const EdgeInsets.only(left: 30),
+        itemDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: const Color.fromARGB(255, 38, 5, 44)),
+          gradient: const LinearGradient(
+            colors: [
+              Color.fromARGB(255, 118, 102, 155),
+              Color.fromARGB(255, 101, 78, 121)
+            ],
+          ),
+        ),
+        selectedItemDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: actionColor.withOpacity(0.37),
+          ),
+          gradient: const LinearGradient(
+            colors: [accentCanvasColor, canvasColor],
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.28),
+              blurRadius: 30,
+            )
+          ],
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.white.withOpacity(0.7),
+          size: 20,
+        ),
+        selectedIconTheme: const IconThemeData(
+          color: Colors.white,
+          size: 20,
+        ),
+      ),
+      extendedTheme: const SidebarXTheme(
+        margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        padding: EdgeInsets.all(5),
+        itemPadding: EdgeInsets.all(15),
+        selectedItemPadding: EdgeInsets.all(15),
+        itemMargin: EdgeInsets.only(left: 10),
+        selectedItemMargin: EdgeInsets.only(left: 10),
+        width: 200,
+        decoration: BoxDecoration(
+          color: canvasColor,
+        ),
+      ),
+      footerDivider: divider,
+      items: [
+        SidebarXItem(
+          icon: Icons.home,
+          label: 'Home',
+          onTap: () {
+            debugPrint('Home');
+          },
+        ),
+        const SidebarXItem(
+          icon: Icons.search,
+          label: 'Search',
+        ),
+        const SidebarXItem(
+          icon: Icons.people,
+          label: 'People',
+        ),
+        const SidebarXItem(
+          icon: Icons.favorite,
+          label: 'Favorites',
+        ),
+        const SidebarXItem(
+          iconWidget: FlutterLogo(size: 20),
+          label: 'Flutter',
+        ),
+      ],
+    );
+  }
+}
+
+const primaryColor = Color(0xFF685BFF);
+const canvasColor = Color(0xFF2E2E48);
+const scaffoldBackgroundColor = Color(0xFF464667);
+const accentCanvasColor = Color.fromRGBO(29, 47, 81, 1);
+const white = Colors.white;
+final actionColor = const Color(0xFF5F5FA7).withOpacity(0.6);
+final divider = Divider(color: white.withOpacity(0.3), height: 1);
