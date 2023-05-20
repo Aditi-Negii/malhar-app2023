@@ -2,14 +2,14 @@ import 'package:malhar_2023/components/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class Blog extends StatefulWidget {
-  const Blog({super.key});
+class Shop extends StatefulWidget {
+  const Shop({super.key});
 
   @override
-  State<Blog> createState() => _BlogState();
+  State<Shop> createState() => _ShopState();
 }
 
-class _BlogState extends State<Blog> {
+class _ShopState extends State<Shop> {
   late InAppWebViewController _webViewController;
 
   @override
@@ -40,7 +40,7 @@ class _BlogState extends State<Blog> {
                   android:
                       AndroidInAppWebViewOptions(useHybridComposition: true)),
               initialUrlRequest:
-                  URLRequest(url: Uri.parse("https://blog.malharfest.in/")),
+                  URLRequest(url: Uri.parse("https://malharfest.in/shop")),
               onWebViewCreated: (InAppWebViewController controller) {
                 _webViewController = controller;
               },
