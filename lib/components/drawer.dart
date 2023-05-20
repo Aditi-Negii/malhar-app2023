@@ -4,6 +4,7 @@ import 'package:malhar_2023/main.dart';
 
 import '../pages/Contact.dart';
 import '../pages/blog.dart';
+import '../pages/shop.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -41,16 +42,13 @@ class CustomDrawer extends StatelessWidget {
                 title: const Text('Blog'),
                 onTap: () {
                   Get.to(Blog());
-                  // Update the state of the app.
-                  // ...
                 },
               ),
               ListTile(
                 leading: Icon(Icons.shopping_cart_rounded),
                 title: const Text('Shop'),
                 onTap: () {
-                  // Update the state of the app.
-                  // ...
+                  Get.to(Shop());
                 },
               ),
               ListTile(
