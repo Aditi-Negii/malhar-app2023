@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malhar_2023/main.dart';
-
 import '../pages/Contact.dart';
 import '../pages/blog.dart';
 import '../pages/shop.dart';

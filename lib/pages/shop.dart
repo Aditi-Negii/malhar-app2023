@@ -1,6 +1,6 @@
-import 'package:malhar_2023/components/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:malhar_2023/components/drawer_wrapper.dart';
 
 class Shop extends StatefulWidget {
   const Shop({super.key});
@@ -14,7 +14,8 @@ class _ShopState extends State<Shop> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DrawerWrapper(
+        scaffold: Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
@@ -24,7 +25,6 @@ class _ShopState extends State<Shop> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      drawer: const CustomDrawer(),
       body: Padding(
         padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
         child: Container(
@@ -48,6 +48,6 @@ class _ShopState extends State<Shop> {
           ),
         ])),
       ),
-    );
+    ));
   }
 }
