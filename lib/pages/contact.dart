@@ -2,8 +2,8 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gsheets/gsheets.dart';
+import 'package:malhar_2023/components/drawer_wrapper.dart';
 import '../credentials/credentials.dart';
-import '../components/drawer.dart';
 
 class Contact extends StatefulWidget {
   const Contact({super.key});
@@ -34,7 +34,8 @@ class _ContactState extends State<Contact> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DrawerWrapper(
+        scaffold: Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
@@ -44,8 +45,6 @@ class _ContactState extends State<Contact> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      // drawer: ExampleSidebarX(controller: _controller),
-      drawer: const CustomDrawer(),
       body: Container(
         decoration:
             const BoxDecoration(color: Color.fromRGBO(252, 228, 236, 1)),
@@ -139,9 +138,9 @@ class _ContactState extends State<Contact> {
                       }
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('Unexpected error occured !')),
-                        );
+                        const SnackBar(
+                            content: Text('Unexpected error occured !')),
+                      );
                     }
                   },
                   child: const Text('Submit'),
@@ -151,6 +150,6 @@ class _ContactState extends State<Contact> {
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    ));
   }
 }
