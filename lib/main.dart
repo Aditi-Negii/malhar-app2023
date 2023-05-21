@@ -41,6 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DrawerWrapper(
+      disableGestures: false,
+      drawerController: _advancedDrawerController,
       scaffold: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(

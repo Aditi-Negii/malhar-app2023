@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
 import 'package:gsheets/gsheets.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
@@ -32,124 +33,131 @@ class _ContactState extends State<Contact> {
     return workSheet.values.appendRow([name, email, mobile, message]);
   }
 
+  final _advancedDrawerController = AdvancedDrawerController();
+
   @override
   Widget build(BuildContext context) {
     return DrawerWrapper(
+        disableGestures: false,
+        drawerController: _advancedDrawerController,
         scaffold: Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: const Text(
-          "",
-          textAlign: TextAlign.center,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Container(
-        decoration:
-            const BoxDecoration(color: Color.fromRGBO(252, 228, 236, 1)),
-        child: Form(
-          key: _formKey,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Name
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(label: Text("Name")),
-                    controller: name,
-                    // The validator receives the text that the user has entered.
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                // Email
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(label: Text("Email")),
-                    controller: email,
-                    // The validator receives the text that the user has entered.
-                    validator: (value) {
-                      if (!EmailValidator.validate(value!)) {
-                        return 'Please enter a valid email';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                // Mobile
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(label: Text("Mobile")),
-                    controller: mobile,
-                    // The validator receives the text that the user has entered.
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      } else if (value.length != 10) {
-                        return 'Please enter valid mobile number';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                // Message
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(label: Text("Message")),
-                    controller: message,
-                    // The validator receives the text that the user has entered.
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () async {
-                    try {
-                      // Open sheet
-                      final sheet = await gsheets.spreadsheet(sheetsId);
-                      var workSheet = sheet.worksheetById(worksheetId);
-
-                      if (_formKey.currentState!.validate()) {
-                        // Insert data into sheet
-                        insertData(
-                            name.value.text,
-                            email.value.text,
-                            int.parse(mobile.value.text),
-                            message.value.text,
-                            workSheet!);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('Data received successfully !')),
-                        );
-                      }
-                    } catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Unexpected error occured !')),
-                      );
-                    }
-                  },
-                  child: const Text('Submit'),
-                ),
-              ],
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            title: const Text(
+              "",
+              textAlign: TextAlign.center,
             ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
           ),
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    ));
+          body: Container(
+            decoration:
+                const BoxDecoration(color: Color.fromRGBO(252, 228, 236, 1)),
+            child: Form(
+              key: _formKey,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Name
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextFormField(
+                        decoration: const InputDecoration(label: Text("Name")),
+                        controller: name,
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    // Email
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextFormField(
+                        decoration: const InputDecoration(label: Text("Email")),
+                        controller: email,
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (!EmailValidator.validate(value!)) {
+                            return 'Please enter a valid email';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    // Mobile
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextFormField(
+                        decoration:
+                            const InputDecoration(label: Text("Mobile")),
+                        controller: mobile,
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          } else if (value.length != 10) {
+                            return 'Please enter valid mobile number';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    // Message
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextFormField(
+                        decoration:
+                            const InputDecoration(label: Text("Message")),
+                        controller: message,
+                        // The validator receives the text that the user has entered.
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        try {
+                          // Open sheet
+                          final sheet = await gsheets.spreadsheet(sheetsId);
+                          var workSheet = sheet.worksheetById(worksheetId);
+
+                          if (_formKey.currentState!.validate()) {
+                            // Insert data into sheet
+                            insertData(
+                                name.value.text,
+                                email.value.text,
+                                int.parse(mobile.value.text),
+                                message.value.text,
+                                workSheet!);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Data received successfully !')),
+                            );
+                          }
+                        } catch (e) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Unexpected error occured !')),
+                          );
+                        }
+                      },
+                      child: const Text('Submit'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ), // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
