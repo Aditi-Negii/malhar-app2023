@@ -10,16 +10,17 @@ import 'package:malhar_2023/pages/shop.dart';
 import '../main.dart';
 
 class DrawerWrapper extends StatefulWidget {
-  const DrawerWrapper({super.key, required this.scaffold});
+  const DrawerWrapper({super.key, required this.scaffold, required this.drawerController,required this.disableGestures});
 
-  final Widget scaffold;
+  final Scaffold scaffold;
+  final AdvancedDrawerController drawerController;
+  final bool disableGestures;
 
   @override
   State<DrawerWrapper> createState() => _DrawerWrapperState();
 }
 
 class _DrawerWrapperState extends State<DrawerWrapper> {
-  final _advancedDrawerController = AdvancedDrawerController();
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
@@ -37,7 +38,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
           ),
         ),
       ),
-      controller: _advancedDrawerController,
+      controller: widget.drawerController,
       childDecoration: const BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(32)),
       ),
@@ -46,7 +47,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
       animateChildDecoration: true,
       rtlOpening: false,
       // openScale: 1.0,
-      disabledGestures: false,
+      disabledGestures: widget.disableGestures,
       drawer: SafeArea(
         child: Container(
           child: ListTileTheme(
