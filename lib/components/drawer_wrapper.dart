@@ -88,13 +88,13 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                       Get.to(Blog());
                     },
                   ),
-                  ListTile(
-                    leading: Icon(Icons.shopping_cart_rounded),
-                    title: const Text('Shop'),
-                    onTap: () {
-                      Get.to(Shop());
-                    },
-                  ),
+                  // ListTile(
+                  //   leading: Icon(Icons.shopping_cart_rounded),
+                  //   title: const Text('Shop'),
+                  //   onTap: () {
+                  //     Get.to(Shop());
+                  //   },
+                  // ),
                   ListTile(
                     leading: Icon(Icons.people),
                     title: const Text('Contact us'),
