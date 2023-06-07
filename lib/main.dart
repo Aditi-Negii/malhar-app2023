@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
+import 'package:malhar_2023/home.dart';
 import 'components/drawer.dart';
 import 'pages/blog.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Home Page'),
+      home: const MyHomePage(title: 'Home'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               valueListenable: _advancedDrawerController,
               builder: (_, value, __) {
                 return AnimatedSwitcher(
-                  duration: Duration(milliseconds: 250),
+                  duration: const Duration(milliseconds: 250),
                   child: Icon(
                     value.visible ? Icons.clear : Icons.menu,
                     key: ValueKey<bool>(value.visible),
@@ -68,22 +69,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/bg.png'),
-                  fit: BoxFit.cover)),
-          child: const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  '',
-                )
-              ],
-            ),
-          ),
-        ),
+        body: const HomeScreen(),
+        // body: Container(
+        //   decoration: const BoxDecoration(
+        //       image: DecorationImage(
+        //           image: AssetImage('assets/images/bg.png'),
+        //           fit: BoxFit.cover)),
+        //   child: const Center(
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: <Widget>[
+        //         Text(
+        //           '',
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
       ),
     );
   }

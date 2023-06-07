@@ -385,7 +385,7 @@ class _ContactState extends State<Contact> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
                 Container(
-                  child: Image.asset("icons/instagram.png"),
+                  child: Image.asset("assets/icons/instagram.png"),
                   height : 20,
                   width : 20
                 ),
@@ -393,7 +393,7 @@ class _ContactState extends State<Contact> {
                 SizedBox(width:20),
                 
                 Container(
-                  child: Image.asset("icons/facebook.png"),
+                  child: Image.asset("assets/icons/facebook.png"),
                   height : 20,
                   width : 20
                 ),
@@ -401,7 +401,7 @@ class _ContactState extends State<Contact> {
                 SizedBox(width:20),
                 
                 Container(
-                  child: Image.asset("icons/youtube.png"),
+                  child: Image.asset("assets/icons/youtube.png"),
                   height : 20,
                   width : 20
                 ),
