@@ -6,7 +6,6 @@ import 'package:gsheets/gsheets.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
 import '../credentials/credentials.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
@@ -53,7 +52,7 @@ class _ContactState extends State<Contact> {
                 textStyle : const TextStyle(
                             fontSize: 25.0,
                             fontWeight : FontWeight.w400,
-                            color: Color.fromRGBO(246, 221, 235, 1),
+                            color: Color.fromRGBO(255, 255, 255, 1),
                             
 
                ) )),
@@ -95,7 +94,7 @@ class _ContactState extends State<Contact> {
                       style: GoogleFonts.poppins(
                         fontSize: 22.0,
                         fontWeight : FontWeight.w400,
-                        color: const Color.fromRGBO(246, 221, 235, 1),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                 ),
                 ]),
@@ -110,14 +109,14 @@ class _ContactState extends State<Contact> {
                   children: [
                     const Icon(Icons.mail_outline_rounded,
                     size: 16,
-                    color:  Color.fromRGBO(246, 221, 235, 1),),
+                    color:  Color.fromARGB(255, 255, 255, 255),),
 
                     Text(" quartet@malharfest.in",
                       style: GoogleFonts.poppins(
                         fontSize: 16.0,
                         fontWeight : FontWeight.w300,
                         fontStyle: FontStyle.italic,
-                        color: const Color.fromRGBO(246, 221, 235, 1),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                 ),
                   ],
@@ -131,14 +130,14 @@ class _ContactState extends State<Contact> {
                   children: [
                     const Icon(Icons.mail_outline_rounded,
                     size: 16,
-                    color:  Color.fromRGBO(246, 221, 235, 1),),
+                    color:  Color.fromARGB(255, 255, 255, 255),),
 
                     Text(" malharfest@xaviers.edu.in",
                       style: GoogleFonts.poppins(
                         fontSize: 16.0,
                         fontWeight : FontWeight.w300,
                         fontStyle: FontStyle.italic,
-                        color: const Color.fromRGBO(246, 221, 235, 1),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                 ),
                   ],
@@ -156,7 +155,7 @@ class _ContactState extends State<Contact> {
                       height: 450,
                       width: 303,
                       decoration: const BoxDecoration(
-                        color: Color.fromRGBO(246, 221, 235, 1),
+                        color: Color.fromARGB(244, 255, 255, 255),
                         borderRadius: BorderRadius.all(Radius.circular(20))                        
                       ),
                       child: Form(
@@ -164,33 +163,43 @@ class _ContactState extends State<Contact> {
                       child : Padding(
                         padding: const EdgeInsets.all(13),
                         child : Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           
                           const SizedBox(height:13),
                           
                           //Full Name
-                          TextFormField(
-                             style : GoogleFonts.poppins(
-                                  color: Color.fromARGB(255, 7, 1, 41),
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w400,
-                                ), 
-                            cursorColor: const Color.fromRGBO(36, 27, 80, 1),                          
-                            decoration: InputDecoration(                              
-                                hintText: 'Full Name',
-                                hintStyle: GoogleFonts.poppins(
+                          Text("Full Name",
+                          style : GoogleFonts.poppins(
                                   color: const Color.fromRGBO(36, 27, 80, 1),
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w500,)
+                          ),
+                          
+                          const SizedBox(height:3),
+                         
+                          SizedBox(
+                            height:35,
+                            child: TextFormField(
+                             style : GoogleFonts.poppins(
+                                  color: const Color.fromARGB(255, 7, 1, 41),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
                                 ),
-                                 enabledBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
+                            
+                            cursorColor: const Color.fromRGBO(36, 27, 80, 1),                          
+                            decoration: InputDecoration(                              
+                                //contentPadding: const EdgeInsets.symmetric(vertical: 40), 
+                                 enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                focusedBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),                           
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),           
                           ),
                           controller: name,
                         // The validator receives the text that the user has entered.
@@ -201,32 +210,41 @@ class _ContactState extends State<Contact> {
                           return null;
                         },  
                           ),
-
+                        ),
+                          
                           const SizedBox(height:13),
 
                           //Email
-                          TextFormField(
+                           Text("Email",
+                          style : GoogleFonts.poppins(
+                                  color: const Color.fromRGBO(36, 27, 80, 1),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,)
+                          ),
+                          
+                          const SizedBox(height:3),
+
+                          SizedBox(
+                            height:35,
+                            child : TextFormField(
                             cursorColor: const Color.fromRGBO(36, 27, 80, 1),
                             style : GoogleFonts.poppins(
                                   color: Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400,
                                 ), 
-                            decoration: InputDecoration(
-                                hintText: 'Email',
-                                hintStyle: GoogleFonts.poppins(
-                                  color: const Color.fromRGBO(36, 27, 80, 1),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                            decoration: InputDecoration(                              
+                                //contentPadding: const EdgeInsets.symmetric(vertical: 40), 
+                                 enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                 enabledBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),
-                                focusedBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),                              
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),           
                           ),
                           controller: email,
                         // The validator receives the text that the user has entered.
@@ -236,12 +254,23 @@ class _ContactState extends State<Contact> {
                           }
                           return null;
                         },    
-                          ),
+                          ),),
 
                           const SizedBox(height:13),
 
                           //Contact Number
-                          TextFormField(
+                          Text("Contact Number",
+                          style : GoogleFonts.poppins(
+                                  color: const Color.fromRGBO(36, 27, 80, 1),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,)
+                          ),
+                          
+                          const SizedBox(height:3),
+
+                          SizedBox(
+                            height:35,
+                            child :TextFormField(
                              style : GoogleFonts.poppins(
                                   color: Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
@@ -249,21 +278,18 @@ class _ContactState extends State<Contact> {
                                 ), 
                             keyboardType: TextInputType.number,
                             cursorColor: const Color.fromRGBO(36, 27, 80, 1),
-                            decoration: InputDecoration(
-                                hintText: 'Contact Number',
-                                hintStyle: GoogleFonts.poppins(
-                                  color: const Color.fromRGBO(36, 27, 80, 1),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                            decoration: InputDecoration(                              
+                                //contentPadding: const EdgeInsets.symmetric(vertical: 40), 
+                                 enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                 enabledBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),
-                                focusedBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),                              
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),           
                           ),
                           controller: mobile,
                         // The validator receives the text that the user has entered.
@@ -275,12 +301,23 @@ class _ContactState extends State<Contact> {
                           }
                           return null;
                         },  
-                          ),
+                          ),),
 
                           const SizedBox(height:13),
 
                           //Your Message
-                          TextFormField(
+                          Text("Your Message",
+                          style : GoogleFonts.poppins(
+                                  color: const Color.fromRGBO(36, 27, 80, 1),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,)
+                          ),
+                          
+                          const SizedBox(height:3),
+
+                          SizedBox(
+                            height:75,
+                            child :TextFormField(
                              style : GoogleFonts.poppins(
                                   color: Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
@@ -288,21 +325,18 @@ class _ContactState extends State<Contact> {
                                 ), 
                             maxLines: 3,
                             cursorColor: const Color.fromRGBO(36, 27, 80, 1),
-                            decoration: InputDecoration(
-                                hintText: 'Your Message',
-                                hintStyle: GoogleFonts.poppins(
-                                  color: const Color.fromRGBO(36, 27, 80, 1),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                            decoration: InputDecoration(                              
+                                //contentPadding: const EdgeInsets.symmetric(vertical: 40), 
+                                 enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                 enabledBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ), 
-                                focusedBorder: const UnderlineInputBorder( 
-                                  borderSide: BorderSide(
-                                  color:  Color.fromRGBO(36, 27, 80, 1),), 
-                                ),                             
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                  const BorderSide( color: Color.fromARGB(255, 144, 143, 152),), 
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),           
                           ),
                           controller: message,
                         // The validator receives the text that the user has entered.
@@ -312,7 +346,7 @@ class _ContactState extends State<Contact> {
                           }
                           return null;
                         },
-                          ),
+                          )),
 
                           const SizedBox(height:20),
 
@@ -354,7 +388,7 @@ class _ContactState extends State<Contact> {
                           style: GoogleFonts.poppins(
                             fontSize: 12.9495,
                             fontWeight : FontWeight.w500,                            
-                            color: const Color.fromRGBO(246, 221, 235, 1),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             
 
                           ),))),
@@ -385,7 +419,7 @@ class _ContactState extends State<Contact> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
                 Container(
-                  child: Image.asset("assets/icons/instagram.png"),
+                  child: Image.asset("icons/instagram.png"),
                   height : 20,
                   width : 20
                 ),
@@ -393,7 +427,7 @@ class _ContactState extends State<Contact> {
                 SizedBox(width:20),
                 
                 Container(
-                  child: Image.asset("assets/icons/facebook.png"),
+                  child: Image.asset("icons/facebook.png"),
                   height : 20,
                   width : 20
                 ),
@@ -401,7 +435,7 @@ class _ContactState extends State<Contact> {
                 SizedBox(width:20),
                 
                 Container(
-                  child: Image.asset("assets/icons/youtube.png"),
+                  child: Image.asset("icons/youtube.png"),
                   height : 20,
                   width : 20
                 ),
@@ -430,3 +464,4 @@ class _ContactState extends State<Contact> {
         ));
   }
 }
+
