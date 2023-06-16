@@ -10,6 +10,8 @@ import 'package:malhar_2023/pages/utils/fire_auth.dart';
 import 'package:malhar_2023/pages/utils/validator.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
