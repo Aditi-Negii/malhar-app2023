@@ -6,6 +6,7 @@ import 'package:gsheets/gsheets.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
 import '../credentials/credentials.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 
 
@@ -45,7 +46,7 @@ class _ContactState extends State<Contact> {
         drawerController: _advancedDrawerController,
         
         scaffold: Scaffold(
-          extendBodyBehindAppBar: true,
+          extendBodyBehindAppBar: false,
           appBar: AppBar(
             title: Text("Contact Us", 
                style: GoogleFonts.poppins(
@@ -56,7 +57,7 @@ class _ContactState extends State<Contact> {
                             
 
                ) )),
-        backgroundColor: const Color.fromRGBO(36, 27, 80, 1),
+        backgroundColor: Color.fromARGB(255, 41, 1, 42),
       ),
           body: Container(
             height: MediaQuery.of(context).size.height,
@@ -66,19 +67,21 @@ class _ContactState extends State<Contact> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [
+              colors: [Color.fromARGB(255, 64, 4, 72), Color.fromARGB(255, 141, 74, 143), Color.fromARGB(255, 225, 171, 207)]
+              /*colors: [
+                
                Color.fromRGBO(71, 51, 148, 1),
                Color.fromRGBO(97, 71, 156, 1),
                Color.fromRGBO(133, 93, 167, 1),
                Color.fromRGBO(176, 132, 188, 0.86),
 
-              ],
+              ],*/
             )
           ), 
             
             child: SingleChildScrollView(
               child : Padding(
-            padding: const EdgeInsets.all(42),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -87,17 +90,22 @@ class _ContactState extends State<Contact> {
                 ),
               
                 //Send us msg text 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  Text("Send us a message",
-                      style: GoogleFonts.poppins(
-                        fontSize: 22.0,
-                        fontWeight : FontWeight.w400,
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0,25,0,0),
+                  child: Row(
+                    
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                    SizedBox(width: 320),
+                    Text("Send us a message",
+                        style: GoogleFonts.poppins(
+                          fontSize: 22.0,
+                          fontWeight : FontWeight.w400,
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                        ),
+                  ),
+                  ]),
                 ),
-                ]),
 
                 const SizedBox(
                   height:13,
@@ -105,13 +113,16 @@ class _ContactState extends State<Contact> {
                 
                 //mail
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+
                   children: [
+                    SizedBox(width: 320),
+
                     const Icon(Icons.mail_outline_rounded,
                     size: 16,
                     color:  Color.fromARGB(255, 255, 255, 255),),
 
-                    Text(" quartet@malharfest.in",
+                    Text("quartet@malharfest.in",
                       style: GoogleFonts.poppins(
                         fontSize: 16.0,
                         fontWeight : FontWeight.w300,
@@ -126,8 +137,9 @@ class _ContactState extends State<Contact> {
                 ),
                 //mail                
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    SizedBox(width: 320),
                     const Icon(Icons.mail_outline_rounded,
                     size: 16,
                     color:  Color.fromARGB(255, 255, 255, 255),),
@@ -351,10 +363,56 @@ class _ContactState extends State<Contact> {
                           const SizedBox(height:20),
 
                           //Submit
-                          SizedBox(
+                          Center(child: SizedBox(
                             height: 38.21,
                             width:278,
-                            child : ElevatedButton(
+                            
+                            child :Center(
+                              child: AnimatedButton.strip(
+                                            onPress: () async {
+                                                    try {
+                                                      // Open sheet
+                                                      final sheet = await gsheets.spreadsheet(sheetsId);
+                                                      var workSheet = sheet.worksheetById(worksheetId);
+                            
+                                                      if (_formKey.currentState!.validate()) {
+                              // Insert data into sheet
+                              insertData(
+                                  name.value.text,
+                                  email.value.text,
+                                  int.parse(mobile.value.text),
+                                  message.value.text,
+                                  workSheet!);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text('Data received successfully !')),
+                              );
+                                                      }
+                                                    } catch (e) {
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Unexpected error occured !')),
+                                                      );
+                                                    }
+                                                  }, 
+                                            height: 70,
+                                            width: 150,
+                                            text: 'SUBMIT',
+                                            gradient: LinearGradient(colors: [Color.fromARGB(255, 199, 65, 154),Color.fromARGB(255, 64, 4, 72), ]),
+                                            selectedGradientColor: LinearGradient(
+                                                colors: [Colors.pinkAccent, Colors.purpleAccent]),
+                                            isReverse: true,
+                                            selectedTextColor: Colors.black,
+                                            stripTransitionType: StripTransitionType.LEFT_TO_RIGHT,
+                                            textStyle: GoogleFonts.nunito(
+                                              fontSize: 15,
+                                              letterSpacing: 5,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w300),
+                                            animationDuration: Duration(milliseconds: 5000),
+                                          ),
+                            ), /*ElevatedButton(
                               onPressed: () async {
                         try {
                           // Open sheet
@@ -391,7 +449,9 @@ class _ContactState extends State<Contact> {
                             color: const Color.fromARGB(255, 255, 255, 255),
                             
 
-                          ),))),
+                          ),))*/
+                          ), 
+                          ),
 
                         ],
                       ),
@@ -402,18 +462,7 @@ class _ContactState extends State<Contact> {
               const SizedBox(height:27),
 
               //connect with us text
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Text("Connect with us",
-                style: GoogleFonts.poppins(
-                  fontSize: 22,
-                  fontWeight : FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                  color: const Color.fromRGBO(36, 27, 80, 1) 
-
-                ),)
-              ],),
+             
 
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,

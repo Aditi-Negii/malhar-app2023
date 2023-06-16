@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:malhar_2023/data/data.dart';
+import 'package:malhar_2023/login_page.dart';
 
 import 'models/date_model.dart';
 import 'models/event_type_model.dart';
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Container(
               decoration: const BoxDecoration(
-               color: Color(0xff102733)
+               color: Color.fromARGB(255, 32, 3, 48)
               ),
             ),
             Container(
@@ -67,7 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       //   ],
                       // ),
                       const Spacer(),
-                      Image.asset("assets/notify.png", height: 22,),
+                      GestureDetector(child: Image.asset("assets/notify.png", height: 22,),onTap: (){Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        ),
+      );},) ,
                       const SizedBox(width: 16,),
                       Image.asset("assets/menu.png", height: 22,)
                     ],
@@ -232,7 +237,7 @@ class EventTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
-        color: const Color(0xff29404E),
+        color: Color.fromARGB(255, 173, 107, 179),
         borderRadius: BorderRadius.circular(12)
       ),
       child: Column(
@@ -263,7 +268,7 @@ class PopularEventTile extends StatelessWidget {
       height: 100,
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: const Color(0xff29404E),
+        color: Color.fromARGB(255, 161, 78, 142),
         borderRadius: BorderRadius.circular(8)
       ),
       child: Row(
