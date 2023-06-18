@@ -5,8 +5,7 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
 import 'package:malhar_2023/pages/blog.dart';
 import 'package:malhar_2023/pages/contact.dart';
-import 'package:malhar_2023/pages/shop.dart';
-
+import 'package:malhar_2023/flappy.dart';
 import '../main.dart';
 
 class DrawerWrapper extends StatefulWidget {
@@ -39,6 +38,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
         ),
       ),
       controller: widget.drawerController,
+      // controller: AdvancedDrawerController(),
       childDecoration: const BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(32)),
       ),
@@ -46,7 +46,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
       animationDuration: const Duration(milliseconds: 300),
       animateChildDecoration: true,
       rtlOpening: false,
-      // openScale: 1.0,
+      openRatio: 0.45,
       disabledGestures: widget.disableGestures,
       drawer: SafeArea(
         child: Container(
@@ -54,7 +54,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
             textColor: Colors.white,
             iconColor: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -79,6 +79,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     title: const Text('Home'),
                     onTap: () {
                       Get.to(MyHomePage(title: "Home"));
+                      
                     },
                   ),
                   ListTile(
@@ -86,6 +87,15 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     title: const Text('Blog'),
                     onTap: () {
                       Get.to(Blog());
+                      widget.drawerController.hideDrawer();
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.web),
+                    title: const Text('Flappy'),
+                    onTap: () {
+                      Get.to(FlappyWindow());
+                      widget.drawerController.hideDrawer();
                     },
                   ),
                   // ListTile(
@@ -100,6 +110,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     title: const Text('Contact us'),
                     onTap: () {
                       Get.to(const Contact());
+                      widget.drawerController.hideDrawer();
                       // Update the state of the app.
                       // ...
                     },
@@ -112,7 +123,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     ),
                     child: Container(
                       margin: const EdgeInsets.symmetric(
-                        vertical: 16.0,
+                        vertical: 8.0,
                       ),
                       child: Text('Terms of Service | Privacy Policy'),
                     ),

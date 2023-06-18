@@ -36,7 +36,7 @@ class _ContactState extends State<Contact> {
       Worksheet workSheet) {
     return workSheet.values.appendRow([name, email, mobile, message]);
   }
-
+  
   final _advancedDrawerController = AdvancedDrawerController();
 
   @override
@@ -94,9 +94,8 @@ class _ContactState extends State<Contact> {
                   padding: const EdgeInsets.fromLTRB(0,25,0,0),
                   child: Row(
                     
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                    SizedBox(width: 320),
                     Text("Send us a message",
                         style: GoogleFonts.poppins(
                           fontSize: 22.0,
@@ -109,50 +108,6 @@ class _ContactState extends State<Contact> {
 
                 const SizedBox(
                   height:13,
-                ),
-                
-                //mail
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-
-                  children: [
-                    SizedBox(width: 320),
-
-                    const Icon(Icons.mail_outline_rounded,
-                    size: 16,
-                    color:  Color.fromARGB(255, 255, 255, 255),),
-
-                    Text("quartet@malharfest.in",
-                      style: GoogleFonts.poppins(
-                        fontSize: 16.0,
-                        fontWeight : FontWeight.w300,
-                        fontStyle: FontStyle.italic,
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
-                ),
-                  ],
-                ),
-              const SizedBox(
-                  height:6,
-                ),
-                //mail                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 320),
-                    const Icon(Icons.mail_outline_rounded,
-                    size: 16,
-                    color:  Color.fromARGB(255, 255, 255, 255),),
-
-                    Text(" malharfest@xaviers.edu.in",
-                      style: GoogleFonts.poppins(
-                        fontSize: 16.0,
-                        fontWeight : FontWeight.w300,
-                        fontStyle: FontStyle.italic,
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
-                ),
-                  ],
                 ),
                 
                 const SizedBox(
@@ -464,30 +419,30 @@ class _ContactState extends State<Contact> {
               //connect with us text
              
 
-               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
-                Container(
-                  child: Image.asset("icons/instagram.png"),
-                  height : 20,
-                  width : 20
-                ),
+              //  Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children:  [
+              //   Container(
+              //     child: Image.asset("assets/icons/instagram.png"),
+              //     height : 20,
+              //     width : 20
+              //   ),
                 
-                SizedBox(width:20),
+              //   SizedBox(width:20),
                 
-                Container(
-                  child: Image.asset("icons/facebook.png"),
-                  height : 20,
-                  width : 20
-                ),
+              //   Container(
+              //     child: Image.asset("assets/icons/facebook.png"),
+              //     height : 20,
+              //     width : 20
+              //   ),
                 
-                SizedBox(width:20),
+              //   SizedBox(width:20),
                 
-                Container(
-                  child: Image.asset("icons/youtube.png"),
-                  height : 20,
-                  width : 20
-                ),
+              //   Container(
+              //     child: Image.asset("assets/icons/youtube.png"),
+              //     height : 20,
+              //     width : 20
+              //   ),
                 
                 
 
@@ -495,8 +450,8 @@ class _ContactState extends State<Contact> {
                      
                 
 
-                ],
-              ),
+              //   ],
+              // ),
 
               const SizedBox(height:32)
 
