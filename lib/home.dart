@@ -33,8 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
         child: Stack(
           children: <Widget>[
             Container(
@@ -46,50 +45,47 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      // Image.asset("assets/logo.png",height: 28,),
-                      // SizedBox(width: 8,),
-                      // Row(
-                      //   children: <Widget>[
-                      //     Text("UVE", style: TextStyle(
-                      //       color: Colors.white,
-                      //       fontSize: 22,
-                      //       fontWeight: FontWeight.w800
-                      //     ),),
-                      //     Text("UVE", style: TextStyle(
-                      //         color: Color(0xffFCCD00),
-                      //         fontSize: 22,
-                      //         fontWeight: FontWeight.w800
-                      //     ),)
-                      //   ],
-                      // ),
-                      const Spacer(),
-                      GestureDetector(
-                        child: Image.asset(
-                          "assets/notify.png",
-                          height: 22,
-                        ),
-                        onTap: () {
-                          print("clicked");
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => LoginPage(),
-                            ),
-                          );
-                        },
-                      ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      Image.asset(
-                        "assets/menu.png",
-                        height: 22,
-                      )
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.end,
+                  //   children: <Widget>[
+                  //     // Image.asset("assets/logo.png",height: 28,),
+                  //     // SizedBox(width: 8,),
+                  //     // Row(
+                  //     //   children: <Widget>[
+                  //     //     Text("UVE", style: TextStyle(
+                  //     //       color: Colors.white,
+                  //     //       fontSize: 22,
+                  //     //       fontWeight: FontWeight.w800
+                  //     //     ),),
+                  //     //     Text("UVE", style: TextStyle(
+                  //     //         color: Color(0xffFCCD00),
+                  //     //         fontSize: 22,
+                  //     //         fontWeight: FontWeight.w800
+                  //     //     ),)
+                  //     //   ],
+                  //     // ),
+                  //     const Spacer(),
+                  //     ElevatedButton(
+                  //         onPressed: () {
+                  //           print("clicked");
+                  //           Navigator.of(context).pushReplacement(
+                  //             MaterialPageRoute(
+                  //               builder: (context) => LoginPage(),
+                  //             ),
+                  //           );
+                  //         },
+                  //         child: Icon(Icons.login)),
+                  //     // const SizedBox(
+                  //     //   width: 16,
+                  //     // ),
+                  //     // Image.asset(
+                  //     //   "assets/menu.png",
+                  //     //   height: 22,
+                  //     // )
+                  //   ],
+                  // ),
                   const SizedBox(
-                    height: 20,
+                    height: 50,
                   ),
                   Row(
                     children: <Widget>[
@@ -208,8 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
 

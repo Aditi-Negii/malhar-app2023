@@ -46,7 +46,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
       animationDuration: const Duration(milliseconds: 300),
       animateChildDecoration: true,
       rtlOpening: false,
-      // openScale: 1.0,
+      openRatio: 0.40,
       disabledGestures: widget.disableGestures,
       drawer: SafeArea(
         child: Container(
@@ -54,7 +54,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
             textColor: Colors.white,
             iconColor: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -123,7 +123,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     ),
                     child: Container(
                       margin: const EdgeInsets.symmetric(
-                        vertical: 16.0,
+                        vertical: 8.0,
                       ),
                       child: Text('Terms of Service | Privacy Policy'),
                     ),

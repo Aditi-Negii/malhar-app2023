@@ -2,7 +2,7 @@
 const _screenHeight = 696.0;
 const _screenWidth = 392.0;
 const screenDimen = {'x': _screenWidth, 'y': _screenHeight};
-const flappyBirdDimen = {'x': 65.0, 'y': 45.0};
+const flappyBirdDimen = {'x': 70.0, 'y': 47.0};
 final flappyBirdStartingPos = {
   'x': screenDimen['x']! * .2,
   'y': gameAreaHeight / 2

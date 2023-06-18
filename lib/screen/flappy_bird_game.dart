@@ -125,7 +125,8 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
   final gsheets = GSheets(credentials);
 
   Future<bool> insertData(int mobile, int score, Worksheet workSheet) {
-    return workSheet.values.appendRow([mobile, score, DateTime.now().toString()]);
+    return workSheet.values
+        .appendRow([mobile, score, DateTime.now().toString()]);
   }
 
   @override
@@ -150,6 +151,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
     updateBird();
     isUpdating = false;
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: GestureDetector(
           onTapDown: (TapDownDetails details) => handleTap(1),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
 import 'package:malhar_2023/home.dart';
+import 'package:malhar_2023/login_page.dart';
 import 'components/drawer.dart';
 import 'pages/blog.dart';
 
@@ -70,6 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: const HomeScreen(),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print("clicked");
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(),
+                ),
+              );
+            },
+            child: Icon(Icons.login)),
         // body: Container(
         //   decoration: const BoxDecoration(
         //       image: DecorationImage(
