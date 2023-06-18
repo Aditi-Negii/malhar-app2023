@@ -46,7 +46,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
       animationDuration: const Duration(milliseconds: 300),
       animateChildDecoration: true,
       rtlOpening: false,
-      openRatio: 0.40,
+      openRatio: 0.45,
       disabledGestures: widget.disableGestures,
       drawer: SafeArea(
         child: Container(

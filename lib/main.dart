@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Landing page',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const MyHomePage(title: 'Home'),
       debugShowCheckedModeBanner: false,
@@ -73,8 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: const HomeScreen(),
         floatingActionButton: FloatingActionButton(
             onPressed: () {
-              print("clicked");
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) => LoginPage(),
                 ),
