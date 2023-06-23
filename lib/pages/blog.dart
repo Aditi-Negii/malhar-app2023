@@ -17,7 +17,7 @@ class _BlogState extends State<Blog> {
   @override
   Widget build(BuildContext context) {
     return DrawerWrapper(
-      disableGestures: true,
+        disableGestures: true,
         drawerController: _advancedDrawerController,
         scaffold: Scaffold(
           extendBodyBehindAppBar: true,
