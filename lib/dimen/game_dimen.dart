@@ -8,7 +8,7 @@ final flappyBirdStartingPos = {
   'y': gameAreaHeight / 2
 };
 const backgroundDimen = {'x': _screenWidth, 'y': _screenHeight};
-const baseDimen = {'x': _screenWidth + 20, 'y': 140.0};
+const baseDimen = {'x': _screenWidth + 20, 'y': 220.0};
 const baseXOffset = 30;
 const welcomeMessageDimen = {'x': 250.0, 'y': 362.0};
 const pipeGapVertical = 150.0;
