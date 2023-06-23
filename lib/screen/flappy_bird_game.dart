@@ -166,8 +166,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                   //get new background
                   Positioned(top: 0, left: 0, child: drawBackgroundTop()),
 
-                  Positioned(
-                      left: baseShiftX, bottom: 0, child: drawBackgroundBase()),
+                  
                   //todo: get new pipes
                   if (true)
                     ...(pipes.mapIndexed((int index, Pipes item) => Positioned(
@@ -175,6 +174,8 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                           top: 0,
                           child: item.drawPipe(context),
                         ))),
+                  Positioned(
+                      left: baseShiftX, bottom: 0, child: drawBackgroundBase()),
                   //todo: get new bird
                   Positioned(
                     left: flappyBirdState[flappyBirdX] as double,
@@ -376,7 +377,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
       baseShiftX = -((-baseShiftX + 4) % baseXOffset);
     }
     return Image.asset(
-      "assets/images/base.png",
+      "assets/images/basee.png",
       height: baseDimen['y'],
       width: baseDimen['x']! + baseXOffset,
       fit: BoxFit.cover,

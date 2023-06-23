@@ -38,21 +38,18 @@ class _LoginPageState extends State<LoginPage> {
         projectId: "malhar-2023",
         authDomain: "malhar-2023.firebaseapp.com",
       ),
-      
     );
 
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
       print(user.uid);
-     
-        Navigator.of(context).pushReplacement(
+
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => HomeScreen(),
         ),
       );
-    
-      
     }
 
     return firebaseApp;
@@ -75,7 +72,6 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    
                     Padding(
                       padding: const EdgeInsets.only(bottom: 24.0),
                       child: Text(
@@ -158,14 +154,14 @@ class _LoginPageState extends State<LoginPage> {
                                             });
 
                                             if (user != null) {
-                                              
-        Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
-      }
-                                            
+                                              Navigator.of(context)
+                                                  .pushReplacement(
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      HomeScreen(),
+                                                ),
+                                              );
+                                            }
                                           }
                                         },
                                         child: Text(
