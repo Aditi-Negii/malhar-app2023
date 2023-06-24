@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:malhar_2023/data/data.dart';
 import 'package:malhar_2023/login_page.dart';
+import 'package:malhar_2023/pages/calender.dart';
 
 import 'models/date_model.dart';
 import 'models/event_type_model.dart';
@@ -34,177 +36,186 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              decoration:
-                  const BoxDecoration(color: Color.fromARGB(255, 32, 3, 48)),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.end,
-                  //   children: <Widget>[
-                  //     // Image.asset("assets/logo.png",height: 28,),
-                  //     // SizedBox(width: 8,),
-                  //     // Row(
-                  //     //   children: <Widget>[
-                  //     //     Text("UVE", style: TextStyle(
-                  //     //       color: Colors.white,
-                  //     //       fontSize: 22,
-                  //     //       fontWeight: FontWeight.w800
-                  //     //     ),),
-                  //     //     Text("UVE", style: TextStyle(
-                  //     //         color: Color(0xffFCCD00),
-                  //     //         fontSize: 22,
-                  //     //         fontWeight: FontWeight.w800
-                  //     //     ),)
-                  //     //   ],
-                  //     // ),
-                  //     const Spacer(),
-                  //     ElevatedButton(
-                  //         onPressed: () {
-                  //           print("clicked");
-                  //           Navigator.of(context).pushReplacement(
-                  //             MaterialPageRoute(
-                  //               builder: (context) => LoginPage(),
-                  //             ),
-                  //           );
-                  //         },
-                  //         child: Icon(Icons.login)),
-                  //     // const SizedBox(
-                  //     //   width: 16,
-                  //     // ),
-                  //     // Image.asset(
-                  //     //   "assets/menu.png",
-                  //     //   height: 22,
-                  //     // )
-                  //   ],
-                  // ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            "Hello, User!",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 21),
-                          ),
-                          SizedBox(
-                            height: 6,
-                          ),
-                          Text(
-                            "Let's explore what’s happening nearby",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          )
-                        ],
+      child: Stack(
+        children: <Widget>[
+          Container(
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(255, 32, 3, 48)),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    IconButton(
+                        onPressed: () {
+                          Get.to(CalendarScreen());
+                        },
+                        icon: Icon(
+                          Icons.calendar_month,
+                          color: Colors.white,
+                          size: 26,
+                        ))
+                    // Image.asset("assets/logo.png",height: 28,),
+                    // SizedBox(width: 8,),
+                    // Row(
+                    //   children: <Widget>[
+                    //     Text("UVE", style: TextStyle(
+                    //       color: Colors.white,
+                    //       fontSize: 22,
+                    //       fontWeight: FontWeight.w800
+                    //     ),),
+                    //     Text("UVE", style: TextStyle(
+                    //         color: Color(0xffFCCD00),
+                    //         fontSize: 22,
+                    //         fontWeight: FontWeight.w800
+                    //     ),)
+                    //   ],
+                    // ),
+                    // const Spacer(),
+                    // ElevatedButton(
+                    //     onPressed: () {
+                    //       print("clicked");
+                    //       Navigator.of(context).pushReplacement(
+                    //         MaterialPageRoute(
+                    //           builder: (context) => LoginPage(),
+                    //         ),
+                    //       );
+                    //     },
+                    //     child: Icon(Icons.login)),
+                    // const SizedBox(
+                    //   width: 16,
+                    // ),
+                    // Image.asset(
+                    //   "assets/menu.png",
+                    //   height: 22,
+                    // )
+                  ],
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  children: <Widget>[
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Hello, User!",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 21),
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          "Let's explore what’s happening nearby",
+                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        )
+                      ],
+                    ),
+                    const Spacer(),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 3, color: const Color(0xffFAE072)),
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      const Spacer(),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 3, color: const Color(0xffFAE072)),
+                      child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            child: Image.asset(
-                              "assets/profilepic.jpg",
-                              height: 40,
-                            )),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                          child: Image.asset(
+                            "assets/profilepic.jpg",
+                            height: 40,
+                          )),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
 
-                  /// Dates
-                  Container(
-                    height: 60,
-                    child: ListView.builder(
-                        itemCount: dates.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return DateTile(
-                            weekDay: dates[index].weekDay,
-                            date: dates[index].date,
-                            isSelected: todayDateIs == dates[index].date,
-                          );
-                        }),
-                  ),
+                /// Dates
+                Container(
+                  height: 60,
+                  child: ListView.builder(
+                      itemCount: dates.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return DateTile(
+                          weekDay: dates[index].weekDay,
+                          date: dates[index].date,
+                          isSelected: todayDateIs == dates[index].date,
+                        );
+                      }),
+                ),
 
-                  /// Events
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Text(
-                    "All Events",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    height: 100,
-                    child: ListView.builder(
-                        itemCount: eventsType.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return EventTile(
-                            imgAssetPath: eventsType[index].imgAssetPath,
-                            eventType: eventsType[index].eventType,
-                          );
-                        }),
-                  ),
+                /// Events
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  "All Events",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Container(
+                  height: 100,
+                  child: ListView.builder(
+                      itemCount: eventsType.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return EventTile(
+                          imgAssetPath: eventsType[index].imgAssetPath,
+                          eventType: eventsType[index].eventType,
+                        );
+                      }),
+                ),
 
-                  /// Popular Events
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Text(
-                    "Popular Events",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  Container(
-                    child: Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: MediaQuery.removePadding(
-                          removeTop: true,
-                          context: context,
-                          child: ListView.builder(
-                              itemCount: events.length,
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) {
-                                return PopularEventTile(
-                                  desc: events[index].desc,
-                                  imgeAssetPath: events[index].imgeAssetPath,
-                                  date: events[index].date,
-                                  address: events[index].address,
-                                );
-                              }),
-                        ),
+                /// Popular Events
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text(
+                  "Popular Events",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Container(
+                  child: Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: MediaQuery.removePadding(
+                        removeTop: true,
+                        context: context,
+                        child: ListView.builder(
+                            itemCount: events.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return PopularEventTile(
+                                desc: events[index].desc,
+                                imgeAssetPath: events[index].imgeAssetPath,
+                                date: events[index].date,
+                                address: events[index].address,
+                              );
+                            }),
                       ),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
 
