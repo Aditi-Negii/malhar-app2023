@@ -1,4 +1,5 @@
 
+import 'package:flutter/material.dart';
 import 'package:malhar_2023/models/date_model.dart';
 import 'package:malhar_2023/models/event_type_model.dart';
 import 'package:malhar_2023/models/events_model.dart';
@@ -72,21 +73,24 @@ List<EventTypeModel> getEventTypes(){
 
   //1
   eventModel.imgAssetPath = "assets/concert.png";
-  eventModel.eventType = "Concert";
+  eventModel.eventType = "Blog";
+  eventModel.icon = const Icon(Icons.web);
   events.add(eventModel);
 
   eventModel = EventTypeModel();
 
   //1
   eventModel.imgAssetPath = "assets/sports.png";
-  eventModel.eventType = "Sports";
+  eventModel.eventType = "Games";
+  eventModel.icon = const Icon(Icons.videogame_asset_rounded);
   events.add(eventModel);
 
   eventModel = EventTypeModel();
 
   //1
   eventModel.imgAssetPath = "assets/education.png";
-  eventModel.eventType = "Education";
+  eventModel.eventType = "Contact";
+  eventModel.icon = const Icon(Icons.people);
   events.add(eventModel);
 
   eventModel = EventTypeModel();

@@ -223,7 +223,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Image.asset(
-                                          'assets/images/gameover.png',
+                                          'assets/images/game over.png',
                                           height: 60,
                                           width: 280,
                                           fit: BoxFit.cover,
@@ -685,12 +685,12 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
   }
 
   Widget drawWelcome() {
-    return Image.asset(
-      "assets/images/message.png",
-      width: welcomeMessageDimen['x']!,
-      height: welcomeMessageDimen['y']!,
-      fit: BoxFit.cover,
-    );
+      return Image.asset(
+        "assets/images/message blank.png",
+        width: welcomeMessageDimen['x']!,
+        height: welcomeMessageDimen['y']!,
+        fit: BoxFit.cover,
+      );
   }
 
   Widget drawScores() {

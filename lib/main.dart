@@ -1,14 +1,37 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
+import 'package:malhar_2023/data/notfifications.dart';
 import 'package:malhar_2023/home.dart';
 import 'package:malhar_2023/login_page.dart';
+import 'package:malhar_2023/services/notifications.dart';
 import 'components/drawer.dart';
 import 'pages/blog.dart';
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
+  setNotif();
   runApp(const MyApp());
+}
+
+void setNotif() async {
+  print("In notif");
+  var notifications = notificationData;
+  print(notifications);
+  for(final notification in notifications){
+    print(notification['Time'].toString());
+    NotificationService().showNotification(notification['Time'].toString(), notification['Title'].toString(), notification['Desc'].toString(), tz.TZDateTime.now(tz.local).add(Duration(seconds: 4)));
+  }
+
+  // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 1)));
+  // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 3)));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -40,6 +63,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _advancedDrawerController = AdvancedDrawerController();
+
+  @override
+  void initState() {
+    super.initState();
+    tz.initializeTimeZones();
+    tz.setLocalLocation(tz.getLocation('Asia/Kolkata'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,29 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
         body: const HomeScreen(),
         floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => LoginPage(),
-                ),
-              );
+              setNotif();
             },
             child: Icon(Icons.login)),
-        // body: Container(
-        //   decoration: const BoxDecoration(
-        //       image: DecorationImage(
-        //           image: AssetImage('assets/images/bg.png'),
-        //           fit: BoxFit.cover)),
-        //   child: const Center(
-        //     child: Column(
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       children: <Widget>[
-        //         Text(
-        //           '',
-        //         )
-        //       ],
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:malhar_2023/pages/blog.dart';
 import 'package:malhar_2023/pages/contact.dart';
 import 'package:malhar_2023/flappy.dart';
+import 'package:malhar_2023/settings.dart';
 import '../main.dart';
 
 class DrawerWrapper extends StatefulWidget {
@@ -91,28 +92,26 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.web),
-                    title: const Text('Flappy'),
+                    leading: Icon(Icons.videogame_asset_rounded),
+                    title: const Text('Games'),
                     onTap: () {
                       Get.to(FlappyWindow());
                       widget.drawerController.hideDrawer();
                     },
                   ),
-                  // ListTile(
-                  //   leading: Icon(Icons.shopping_cart_rounded),
-                  //   title: const Text('Shop'),
-                  //   onTap: () {
-                  //     Get.to(Shop());
-                  //   },
-                  // ),
                   ListTile(
                     leading: Icon(Icons.people),
                     title: const Text('Contact us'),
                     onTap: () {
                       Get.to(const Contact());
                       widget.drawerController.hideDrawer();
-                      // Update the state of the app.
-                      // ...
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.settings_rounded),
+                    title: const Text('Settings'),
+                    onTap: () {
+                      Get.to(SettingPage());
                     },
                   ),
                   const Spacer(),
@@ -125,7 +124,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                       margin: const EdgeInsets.symmetric(
                         vertical: 8.0,
                       ),
-                      child: Text('Terms of Service | Privacy Policy'),
+                      child: Text('Privacy Policy'),
                     ),
                   ),
                 ],
