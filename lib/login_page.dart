@@ -4,14 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:malhar_2023/event_module/home_page.dart';
 import 'package:malhar_2023/home.dart';
-
 import 'package:malhar_2023/pages/utils/fire_auth.dart';
 import 'package:malhar_2023/pages/utils/validator.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -38,18 +36,21 @@ class _LoginPageState extends State<LoginPage> {
         projectId: "malhar-2023",
         authDomain: "malhar-2023.firebaseapp.com",
       ),
+      
     );
 
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
       print(user.uid);
-
-      Navigator.of(context).pushReplacement(
+     
+        Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => PopUp(user: user.uid,),
         ),
       );
+    
+      
     }
 
     return firebaseApp;
@@ -63,6 +64,22 @@ class _LoginPageState extends State<LoginPage> {
         _focusPassword.unfocus();
       },
       child: Scaffold(
+        appBar:  AppBar(
+        title: Text(
+          "",
+          style: GoogleFonts.openSans(
+              textStyle: TextStyle(
+                  color: Color.fromARGB(179, 4, 3, 3),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600)),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => HomeScreen())),
+        ),
+        backgroundColor: Colors.white,
+      ),
         body: FutureBuilder(
           future: _initializeFirebase(),
           builder: (context, snapshot) {
@@ -72,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    
                     Padding(
                       padding: const EdgeInsets.only(bottom: 24.0),
                       child: Text(
@@ -154,14 +172,14 @@ class _LoginPageState extends State<LoginPage> {
                                             });
 
                                             if (user != null) {
-                                              Navigator.of(context)
-                                                  .pushReplacement(
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HomeScreen(),
-                                                ),
-                                              );
-                                            }
+                                              
+        Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => PopUp(user: user.uid,),
+        ),
+      );
+      }
+                                            
                                           }
                                         },
                                         child: Text(

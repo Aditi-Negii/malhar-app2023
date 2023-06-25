@@ -16,134 +16,142 @@ class CalendarScreen extends StatefulWidget {
 
 class _CalendarScreenState extends State<CalendarScreen> {
   final CalendarController _calendarController = CalendarController();
+  
+  
+  final _advancedDrawerController = AdvancedDrawerController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xff8b72be),
-      //   automaticallyImplyLeading: false,
-      //   // leading: IconButton(
-      //   //   icon: Icon(
-      //   //     Icons.arrow_back_ios,
-      //   //   ),
-      //   //   onPressed: () {
-      //   //     Get.to(
-      //   //       HomeScreen(),
-      //   //     );
-      //   //     // Get.to(DrawerWrapper(scaffold: AdvancedDrawer(child: child, drawer: drawer), drawerController: drawerController, disableGestures: disableGestures)));
-      //   //   },
-      //   // ),
-      // ),
-      body: SafeArea(
-        child: SfCalendar(
-          // showDatePickerButton: true,
-          showNavigationArrow: true,
-          // allowViewNavigation: true,
-          viewHeaderHeight: 50,
-          viewHeaderStyle: ViewHeaderStyle(
-            backgroundColor: Colors.transparent,
-            dayTextStyle: TextStyle(
-                fontSize: 14,
-                color: Color(0xff201b24),
-                fontWeight: FontWeight.w500),
-          ),
-
-          headerHeight: 60,
-          headerStyle: CalendarHeaderStyle(
-              textAlign: TextAlign.center,
-              backgroundColor: Color(0xFF201b24),
-              textStyle: TextStyle(
-                  fontSize: 25,
-                  fontStyle: FontStyle.normal,
-                  letterSpacing: 5,
-                  color: Color(0xFFff5eaea),
-                  fontWeight: FontWeight.w500)),
-          todayHighlightColor: Color(0xff201b24),
-
-          selectionDecoration: BoxDecoration(
-            border: Border.all(color: Color(0xff201b24), width: 2),
-          ),
-          backgroundColor: Color(0xff8b72be),
-          cellBorderColor: Colors.transparent,
-
-          initialDisplayDate: DateTime(2023, 6, 1),
-          //calendar goes from
-          minDate: DateTime(2023, 6, 1),
-          //till this
-          maxDate: DateTime(2023, 8, 31),
-          view: CalendarView.month,
-          controller: _calendarController,
-          monthViewSettings: const MonthViewSettings(
-            showAgenda: true,
-            //how much space whole agenda view takes
-            // agendaItemHeight: 300, //by default
-            //height of each appointment in agenda
-            agendaItemHeight: 70,
-            //direction of scroll
-            // horizontal by default
-            // navigationDirection: MonthNavigationDirection.vertical,
-            //removes dates from other month
-            showTrailingAndLeadingDates: false,
-            // to show week day names on top
-            dayFormat: 'EEE',
-
-            //==========agenda view style begins==================//
-            agendaStyle: AgendaStyle(
-              placeholderTextStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  // fontStyle: FontStyle.italic,
-                  color: Color(0xFF201b24)),
-              backgroundColor: Color(0xff8b72be),
-              appointmentTextStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  // fontStyle: FontStyle.italic,
-                  color: Color(0xFF201b24)),
-              dateTextStyle: TextStyle(
-                  // fontStyle: FontStyle.italic
-                  // ,
-                  // decorationColor: Colors.black,
-                  // backgroundColor: Colors.purpleAccent,
-
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF201b24)),
+    return DrawerWrapper(
+      disableGestures: false,
+      drawerController: _advancedDrawerController,
+      scaffold: Scaffold(
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xff8b72be),
+        //   automaticallyImplyLeading: false,
+        //   // leading: IconButton(
+        //   //   icon: Icon(
+        //   //     Icons.arrow_back_ios,
+        //   //   ),
+        //   //   onPressed: () {
+        //   //     Get.to(
+        //   //       HomeScreen(),
+        //   //     );
+        //   //     // Get.to(DrawerWrapper(scaffold: AdvancedDrawer(child: child, drawer: drawer), drawerController: drawerController, disableGestures: disableGestures)));
+        //   //   },
+        //   // ),
+        // ),
+        body: SafeArea(
+          child: SfCalendar(
+            // showDatePickerButton: true,
+            showNavigationArrow: true,
+            // allowViewNavigation: true,
+            viewHeaderHeight: 50,
+            viewHeaderStyle: ViewHeaderStyle(
+              backgroundColor: Colors.transparent,
               dayTextStyle: TextStyle(
-                  fontStyle: FontStyle.normal,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF201b24)),
+                  fontSize: 14,
+                  color: Color(0xff201b24),
+                  fontWeight: FontWeight.w500),
             ),
-
-            //===========agenda view style ends===================//
-
-            //=================cell style beigns ===================//
-            monthCellStyle: MonthCellStyle(
-                backgroundColor: Color(0xff8b72be),
-
-                // trailingDatesBackgroundColor: Color(0xff216583),
-                // leadingDatesBackgroundColor: Color(0xff216583),
-                // todayBackgroundColor: Color(0xFFf7be16),
+    
+            headerHeight: 60,
+            headerStyle: CalendarHeaderStyle(
+                textAlign: TextAlign.center,
+                backgroundColor: Color(0xFF201b24),
                 textStyle: TextStyle(
-                    fontSize: 14, fontFamily: 'Arial', color: Colors.white),
-                // todayTextStyle: TextStyle(
-                //     fontSize: 12,
-                //     fontWeight: FontWeight.bold,
-                //     fontFamily: 'Arial'),
-                trailingDatesTextStyle: TextStyle(
+                    fontSize: 25,
+                    fontStyle: FontStyle.normal,
+                    letterSpacing: 5,
+                    color: Color(0xFFff5eaea),
+                    fontWeight: FontWeight.w500)),
+            todayHighlightColor: Color(0xff201b24),
+    
+            selectionDecoration: BoxDecoration(
+              border: Border.all(color: Color(0xff201b24), width: 2),
+            ),
+            backgroundColor: Color(0xff8b72be),
+            cellBorderColor: Colors.transparent,
+    
+            initialDisplayDate: DateTime(2023, 6, 1),
+            //calendar goes from
+            minDate: DateTime(2023, 6, 1),
+            //till this
+            maxDate: DateTime(2023, 8, 31),
+            view: CalendarView.month,
+            controller: _calendarController,
+            monthViewSettings: const MonthViewSettings(
+              showAgenda: true,
+              //how much space whole agenda view takes
+              // agendaItemHeight: 300, //by default
+              //height of each appointment in agenda
+              agendaItemHeight: 70,
+              //direction of scroll
+              // horizontal by default
+              // navigationDirection: MonthNavigationDirection.vertical,
+              //removes dates from other month
+              showTrailingAndLeadingDates: false,
+              // to show week day names on top
+              dayFormat: 'EEE',
+    
+              //==========agenda view style begins==================//
+              agendaStyle: AgendaStyle(
+                placeholderTextStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
                     // fontStyle: FontStyle.italic,
-                    fontSize: 12,
-                    fontFamily: 'Arial'),
-                leadingDatesTextStyle: TextStyle(
+                    color: Color(0xFF201b24)),
+                backgroundColor: Color(0xff8b72be),
+                appointmentTextStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
                     // fontStyle: FontStyle.italic,
+                    color: Color(0xFF201b24)),
+                dateTextStyle: TextStyle(
+                    // fontStyle: FontStyle.italic
+                    // ,
+                    // decorationColor: Colors.black,
+                    // backgroundColor: Colors.purpleAccent,
+    
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF201b24)),
+                dayTextStyle: TextStyle(
+                    fontStyle: FontStyle.normal,
                     fontSize: 12,
-                    fontFamily: 'Arial')),
-
-            //==================cell style ends ends ================//
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF201b24)),
+              ),
+    
+              //===========agenda view style ends===================//
+    
+              //=================cell style beigns ===================//
+              monthCellStyle: MonthCellStyle(
+                  backgroundColor: Color(0xff8b72be),
+    
+                  // trailingDatesBackgroundColor: Color(0xff216583),
+                  // leadingDatesBackgroundColor: Color(0xff216583),
+                  // todayBackgroundColor: Color(0xFFf7be16),
+                  textStyle: TextStyle(
+                      fontSize: 14, fontFamily: 'Arial', color: Colors.white),
+                  // todayTextStyle: TextStyle(
+                  //     fontSize: 12,
+                  //     fontWeight: FontWeight.bold,
+                  //     fontFamily: 'Arial'),
+                  trailingDatesTextStyle: TextStyle(
+                      // fontStyle: FontStyle.italic,
+                      fontSize: 12,
+                      fontFamily: 'Arial'),
+                  leadingDatesTextStyle: TextStyle(
+                      // fontStyle: FontStyle.italic,
+                      fontSize: 12,
+                      fontFamily: 'Arial')),
+    
+              //==================cell style ends ends ================//
+            ),
+            dataSource: getCalendarDataSource(),
+            onViewChanged: viewChanged,
           ),
-          dataSource: getCalendarDataSource(),
-          onViewChanged: viewChanged,
         ),
       ),
     );
