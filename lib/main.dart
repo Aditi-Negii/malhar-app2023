@@ -16,6 +16,8 @@ import 'package:timezone/data/latest.dart' as tz;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   NotificationService().initNotification();
+  tz.initializeTimeZones();
+  tz.setLocalLocation(tz.getLocation('Asia/Kolkata'));
   setNotif();
   runApp(const MyApp());
 }
@@ -24,14 +26,32 @@ void setNotif() async {
   print("In notif");
   var notifications = notificationData;
   print(notifications);
-  for(final notification in notifications){
-    print(notification['Time'].toString());
-    NotificationService().showNotification(notification['Time'].toString(), notification['Title'].toString(), notification['Desc'].toString(), tz.TZDateTime.now(tz.local).add(Duration(seconds: 4)));
+  for (final notification in notifications) {
+    print(int.parse(notification['Month'].toString()));
+    if (DateTime(2023, int.parse(notification['Month'].toString()),
+            int.parse(notification['Day'].toString())-1, 12)
+        .isAfter(DateTime.now())) {
+      NotificationService().showNotification(
+          "0",
+          notification['Title'].toString(),
+          notification['Desc'].toString(),
+          tz.TZDateTime.from(
+              DateTime(2023, int.parse(notification['Month'].toString()),
+                  int.parse(notification['Day'].toString()), 12),
+              tz.local));
+      NotificationService().showNotification(
+          "0",
+          notification['Title'].toString(),
+          notification['Desc'].toString(),
+          tz.TZDateTime.from(
+              DateTime(2023, int.parse(notification['Month'].toString()),
+                  int.parse(notification['Day'].toString()) - 1, 12),
+              tz.local));
+    }
   }
 
   // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 1)));
   // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 3)));
-
 }
 
 class MyApp extends StatelessWidget {
@@ -51,7 +71,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -67,8 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    tz.initializeTimeZones();
-    tz.setLocalLocation(tz.getLocation('Asia/Kolkata'));
   }
 
   @override
