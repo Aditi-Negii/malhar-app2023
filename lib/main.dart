@@ -117,11 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: const HomeScreen(),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              setNotif();
-            },
-            child: Icon(Icons.login)),
+        // floatingActionButton: FloatingActionButton(
+        //     onPressed: () {
+        //       setNotif();
+        //     },
+        //     child: Icon(Icons.login)),
       ),
     );
   }
