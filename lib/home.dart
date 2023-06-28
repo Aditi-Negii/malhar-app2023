@@ -160,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return EventTile(
+                            page: eventsType[index].page,
                             icon: eventsType[index].icon,
                             eventType: eventsType[index].eventType,
                           );
@@ -263,29 +264,35 @@ class DateTile extends StatelessWidget {
 class EventTile extends StatelessWidget {
   Icon icon;
   String eventType;
-  EventTile({required this.icon, required this.eventType});
+  Widget page;
+  EventTile({required this.icon, required this.eventType, required this.page});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      margin: const EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(
-          color: Color.fromARGB(255, 173, 107, 179),
-          borderRadius: BorderRadius.circular(12)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          icon,
-          const SizedBox(
-            height: 12,
-          ),
-          Text(
-            eventType,
-            style: const TextStyle(color: Colors.white),
-          )
-        ],
+    return GestureDetector(
+      onTap: () {
+        Get.to(page);
+      },
+      child: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        margin: const EdgeInsets.only(right: 16),
+        decoration: BoxDecoration(
+            color: Color.fromARGB(255, 173, 107, 179),
+            borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            icon,
+            const SizedBox(
+              height: 12,
+            ),
+            Text(
+              eventType,
+              style: const TextStyle(color: Colors.white),
+            )
+          ],
+        ),
       ),
     );
   }

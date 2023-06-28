@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:malhar_2023/flappy.dart';
 import 'package:malhar_2023/models/date_model.dart';
 import 'package:malhar_2023/models/event_type_model.dart';
 import 'package:malhar_2023/models/events_model.dart';
+import 'package:malhar_2023/pages/blog.dart';
+import 'package:malhar_2023/pages/contact.dart';
 
 List<DateModel> getDates(){
 
@@ -74,6 +77,7 @@ List<EventTypeModel> getEventTypes(){
   //1
   eventModel.imgAssetPath = "assets/concert.png";
   eventModel.eventType = "Blog";
+  eventModel.page = const Blog();
   eventModel.icon = const Icon(Icons.web);
   events.add(eventModel);
 
@@ -82,6 +86,7 @@ List<EventTypeModel> getEventTypes(){
   //1
   eventModel.imgAssetPath = "assets/sports.png";
   eventModel.eventType = "Games";
+  eventModel.page = const FlappyWindow();
   eventModel.icon = const Icon(Icons.videogame_asset_rounded);
   events.add(eventModel);
 
@@ -90,6 +95,7 @@ List<EventTypeModel> getEventTypes(){
   //1
   eventModel.imgAssetPath = "assets/education.png";
   eventModel.eventType = "Contact";
+  eventModel.page = const Contact();
   eventModel.icon = const Icon(Icons.people);
   events.add(eventModel);
 

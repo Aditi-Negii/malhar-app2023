@@ -68,6 +68,8 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
   }
 
   var playerScore = 0;
+  var highScore = "0";
+  
   var pipes = <Pipes>[];
   final pipeLocation = <Map<String, double>>[];
   final wingLocations = [0, 1, 2, 1];
@@ -118,7 +120,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
 
   var mobile = TextEditingController();
 
-  // Contact sheet details
+  // Game sheet details
   final sheetsId = '1By8DWhgS4mpkRYYEBDvrSZem_ncxekdOcACoazTAPvA';
   final worksheetId = 0;
 
@@ -129,9 +131,22 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
         .appendRow([mobile, score, DateTime.now().toString()]);
   }
 
+  Future<String> fetchScore() async {
+    // Open sheet
+    print("Fetching score");
+    final sheet = await gsheets.spreadsheet(sheetsId);
+    var workSheet =
+        sheet.worksheetById(worksheetId);
+    var result = await workSheet!.values.value(column: 5, row: 2);
+    print(result);
+    highScore = result;
+    return result;
+  }
+
   @override
   void initState() {
     super.initState();
+    fetchScore();
     Timer.periodic(const Duration(milliseconds: 33), (timer) {
       //should be 33
       if (!isUpdating) setState(() {});
@@ -249,16 +264,28 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           // Add a space between the title and the text
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 20,
                                           ),
                                           // Display the card's text using a font size of 15 and a light grey color
                                           Divider(
                                             color: Colors.purple[900],
                                           ),
+                                          // Add a space between the title and the text
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          // High Score
+                                          Text(
+                                            "High Score: $highScore",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.purple[900],
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                           // Add a row with two buttons spaced apart and aligned to the right side of the card
                                           SizedBox(
-                                            height: 70,
+                                            height: 50,
                                           ),
                                           Row(
                                             mainAxisAlignment:
