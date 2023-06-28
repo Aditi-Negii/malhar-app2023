@@ -3,14 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
+import 'package:malhar_2023/dino_run.dart';
 import 'package:malhar_2023/pages/blog.dart';
 import 'package:malhar_2023/pages/contact.dart';
+import 'package:malhar_2023/pages/workforce.dart';
 import 'package:malhar_2023/flappy.dart';
 import 'package:malhar_2023/settings.dart';
 import '../main.dart';
 
 class DrawerWrapper extends StatefulWidget {
-  const DrawerWrapper({super.key, required this.scaffold, required this.drawerController,required this.disableGestures});
+  const DrawerWrapper(
+      {super.key,
+      required this.scaffold,
+      required this.drawerController,
+      required this.disableGestures});
 
   final Scaffold scaffold;
   final AdvancedDrawerController drawerController;
@@ -80,7 +86,6 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     title: const Text('Home'),
                     onTap: () {
                       Get.to(MyHomePage(title: "Home"));
-                      
                     },
                   ),
                   ListTile(
@@ -96,6 +101,22 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                     title: const Text('Games'),
                     onTap: () {
                       Get.to(FlappyWindow());
+                      widget.drawerController.hideDrawer();
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.videogame_asset_rounded),
+                    title: const Text('Dino'),
+                    onTap: () {
+                      Get.to(DinoRunWindow());
+                      widget.drawerController.hideDrawer();
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.work),
+                    title: const Text('Workforce'),
+                    onTap: () {
+                      Get.to(const Workforce());
                       widget.drawerController.hideDrawer();
                     },
                   ),

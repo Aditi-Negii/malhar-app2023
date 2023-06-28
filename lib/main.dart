@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
@@ -29,7 +27,7 @@ void setNotif() async {
   for (final notification in notifications) {
     print(int.parse(notification['Month'].toString()));
     if (DateTime(2023, int.parse(notification['Month'].toString()),
-            int.parse(notification['Day'].toString())-1, 12)
+            int.parse(notification['Day'].toString()) - 1, 12)
         .isAfter(DateTime.now())) {
       NotificationService().showNotification(
           "0",
