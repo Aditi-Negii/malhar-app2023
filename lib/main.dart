@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:malhar_2023/components/drawer_wrapper.dart';
-import 'package:malhar_2023/data/notfifications.dart';
+import 'package:malhar_2023/credentials/credentials.dart';
 import 'package:malhar_2023/home.dart';
 import 'package:malhar_2023/login_page.dart';
 import 'package:malhar_2023/services/notifications.dart';
@@ -10,6 +11,8 @@ import 'components/drawer.dart';
 import 'pages/blog.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:gsheets/gsheets.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,33 +25,53 @@ void main() async {
 
 void setNotif() async {
   print("In notif");
-  var notifications = notificationData;
-  print(notifications);
-  for (final notification in notifications) {
-    print(int.parse(notification['Month'].toString()));
-    if (DateTime(2023, int.parse(notification['Month'].toString()),
-            int.parse(notification['Day'].toString()) - 1, 12)
-        .isAfter(DateTime.now())) {
-      NotificationService().showNotification(
-          "0",
-          notification['Title'].toString(),
-          notification['Desc'].toString(),
-          tz.TZDateTime.from(
-              DateTime(2023, int.parse(notification['Month'].toString()),
-                  int.parse(notification['Day'].toString()), 12),
-              tz.local));
-      NotificationService().showNotification(
-          "0",
-          notification['Title'].toString(),
-          notification['Desc'].toString(),
-          tz.TZDateTime.from(
-              DateTime(2023, int.parse(notification['Month'].toString()),
-                  int.parse(notification['Day'].toString()) - 1, 12),
-              tz.local));
+  // Check if connected to internet
+  var isConnected = await InternetConnectionChecker().hasConnection;
+  if (isConnected) {
+    // Clearly previouslt scheduled notifs
+    await NotificationService().notificationsPlugin.cancelAll();
+
+    // Notif sheet config
+    final sheetsId = '1I3wjHSBpEKTYzolG7N5QPsBo8UsxmEl7aGdatKyPM8s';
+    final worksheetId = 0;
+    final gsheets = GSheets(credentials);
+    final sheet = await gsheets.spreadsheet(sheetsId);
+    var workSheet = sheet.worksheetById(worksheetId);
+    var result = await workSheet!.values.allRows(fromRow: 2, fill: true);
+
+    // Iterate over notifications and schedule them
+    for (final notification in result) {
+      if (DateTime(2023, int.parse(notification[4].toString()),
+              int.parse(notification[3].toString()) - 1, 12)
+          .isAfter(DateTime.now())) {
+        print("Registering Notif");
+        NotificationService().showNotification(
+            int.parse(notification[0]),
+            notification[1].toString(),
+            notification[2].toString(),
+            tz.TZDateTime.from(
+                DateTime(2023, int.parse(notification[4].toString()),
+                    int.parse(notification[3].toString()), 12),
+                tz.local));
+        NotificationService().showNotification(
+            int.parse(notification[0]),
+            notification[1].toString(),
+            notification[2].toString(),
+            tz.TZDateTime.from(
+                DateTime(2023, int.parse(notification[4].toString()),
+                    int.parse(notification[3].toString()) - 1, 12),
+                tz.local));
+      }
     }
   }
 
-  // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 1)));
+  final List<PendingNotificationRequest> pendingNotificationRequests =
+        await NotificationService()
+            .notificationsPlugin
+            .pendingNotificationRequests();
+    print(pendingNotificationRequests[0].id);
+
+  // NotificationService().showNotification(0, 'a', "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 1)));
   // NotificationService().showNotification(0, a, "Notification body", tz.TZDateTime.now(tz.local).add(Duration(seconds: 3)));
 }
 
@@ -117,11 +140,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: const HomeScreen(),
-        // floatingActionButton: FloatingActionButton(
-        //     onPressed: () {
-        //       setNotif();
-        //     },
-        //     child: Icon(Icons.login)),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              setNotif();
+            },
+            child: Icon(Icons.login)),
       ),
     );
   }

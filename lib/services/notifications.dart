@@ -31,9 +31,9 @@ class NotificationService {
         iOS: DarwinNotificationDetails());
   }
 
-  Future<void> showNotification(String id, String title, String body, tz.TZDateTime time) async {
+  Future<void> showNotification(int id, String title, String body, tz.TZDateTime time) async {
     await notificationsPlugin.zonedSchedule(
-      int.parse(id),
+      id,
       title,
       body,
       time, //schedule the notification to show after 2 seconds.
