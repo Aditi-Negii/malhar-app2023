@@ -14,7 +14,6 @@ import 'package:malhar_2023/dino_run_components.dart/ground.dart';
 // import 'ground.dart';
 // import 'constants.dart';
 
-
 //change my home page to DinoRunGame
 class DinoRunGame extends StatefulWidget {
   const DinoRunGame({Key? key}) : super(key: key);
@@ -62,7 +61,13 @@ class _DinoRunGame extends State<DinoRunGame>
         AnimationController(vsync: this, duration: const Duration(days: 99));
     worldController.addListener(_update);
     // worldController.forward();
-    _die();
+    _welcome();
+  }
+
+  void _welcome() {
+    setState(() {  
+      worldController.forward();
+    });
   }
 
   void _die() {
@@ -224,6 +229,7 @@ class _DinoRunGame extends State<DinoRunGame>
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () {
+           
             if (dino.state != DinoState.dead) {
               dino.jump();
             }
@@ -269,6 +275,479 @@ class _DinoRunGame extends State<DinoRunGame>
                   );
                 },
               ),
+              // if (dino.state == DinoState.welcome)
+              //   Center(
+              //     child: Container(
+              //       height: 300,
+              //       width: 300,
+              //       color: Colors.pink,
+              //     ),
+              //   ),
+              if (dino.state == DinoState.dead)
+                IgnorePointer(
+                        ignoring: false,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 64),
+                          child: Center(
+                            child: SizedBox(
+                              height: 350,
+                              width: 350,
+                              child: Card(
+                              
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                // Set the clip behavior of the card
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                // Define the child widgets of the card
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    // Display an image at the top of the card that fills the width of the card and has a height of 160 pixels
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/game over.png',
+                                          height: 60,
+                                          width: 280,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    // Add a container with padding that contains the card's title, text, and buttons
+                                    Container(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 15, 0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          // Display the card's title using a font size of 24 and a dark grey color
+
+                                          Text(
+                                            "Your Score: " 
+                                            +
+                                                runDistance.toInt().toString(),
+                                            style: TextStyle(
+                                                fontSize: 26,
+                                                color: Colors.purple[900],
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          // Add a space between the title and the text
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                           Text(
+                                            "High Score: $highScore",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.purple[900],
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          // A
+                                          // Display the card's text using a font size of 15 and a light grey color
+                                          Divider(
+                                            color: Colors.purple[900],
+                                          ),
+                                          // Add a space between the title and the text
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          // High Score
+                                          // Text(
+                                          //   "High Score: $highScore",
+                                          //   style: TextStyle(
+                                          //       fontSize: 20,
+                                          //       color: Colors.purple[900],
+                                          //       fontWeight: FontWeight.bold),
+                                          // ),
+                                          // // Add a row with two buttons spaced apart and aligned to the right side of the card
+                                          SizedBox(
+                                            height: 50,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: <Widget>[
+                                              // Add a spacer to push the buttons to the right side of the card
+
+                                              // Add a text button labeled "SHARE" with transparent foreground color and an accent color for the text
+
+                                              SizedBox(
+                                                width: 145,
+                                                height: 40,
+                                                child: ElevatedButton(
+                                                  onPressed: () {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return AlertDialog(
+                                                            title: Text(
+                                                              'Enter mobile number',
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                          .purple[
+                                                                      900],
+                                                                  fontSize: 26,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            content:
+                                                                TextFormField(
+                                                              style: TextStyle(
+                                                                fontSize: 18,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Colors
+                                                                        .purple[
+                                                                    900],
+                                                              ),
+                                                              // controller:
+                                                              //     mobile,
+                                                                                  
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return 'Please enter some text';
+                                                                } else if (value
+                                                                        .length !=
+                                                                    10) {
+                                                                  return 'Please enter valid mobile number';
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                filled: true,
+                                                                fillColor: Colors
+                                                                    .purple[50],
+
+                                                                alignLabelWithHint:
+                                                                    true,
+                                                                hintText:
+                                                                    'Mobile Number',
+                                                                prefixText:
+                                                                    '+91 | ',
+                                                                hintStyle:
+                                                                    TextStyle(
+                                                                  color: Colors
+                                                                          .purple[
+                                                                      100],
+                                                                  fontSize: 18,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                ),
+
+                                                                isDense: true,
+                                                                contentPadding:
+                                                                    EdgeInsets
+                                                                        .all(
+                                                                            15),
+
+                                                                enabledBorder: OutlineInputBorder(
+                                                                    borderSide: BorderSide(
+                                                                        color: Colors
+                                                                            .white),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            5)),
+                                                                focusedBorder: OutlineInputBorder(
+                                                                    borderSide: BorderSide(
+                                                                        color: Colors
+                                                                            .deepPurple),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            5)),
+                                                                // prefixText: '+91 | ',
+                                                                prefixStyle:
+                                                                    TextStyle(
+                                                                  color: Colors
+                                                                          .purple[
+                                                                      900],
+                                                                  fontSize: 18,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            actions: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .all(
+                                                                        8.0),
+                                                                child: SizedBox(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  height: 40,
+                                                                  child:
+                                                                      ElevatedButton(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      // try {
+                                                                      //   // Open sheet
+                                                                      //   final sheet =
+                                                                      //       await gsheets.spreadsheet(sheetsId);
+                                                                      //   var workSheet =
+                                                                      //       sheet.worksheetById(worksheetId);
+
+                                                                      //   // Insert data into sheet
+                                                                      //   insertData(
+                                                                      //       int.parse(mobile.value.text),
+                                                                      //       playerScore,
+                                                                      //       workSheet!);
+                                                                      //   ScaffoldMessenger.of(context)
+                                                                      //       .showSnackBar(
+                                                                      //     const SnackBar(
+                                                                      //         content: Text('Data received successfully !')),
+                                                                      //   );
+                                                                      // } catch (e) {
+                                                                      //   ScaffoldMessenger.of(context)
+                                                                      //       .showSnackBar(
+                                                                      //     const SnackBar(
+                                                                      //         content: Text('Unexpected error occured !')),
+                                                                      //   );
+                                                                      // }
+
+                                                                      // Navigator.pop(
+                                                                      //     context);
+                                                                      // resetGame();
+                                                                    }, //This prop for beautiful expressions
+                                                                    child: Text(
+                                                                        "Submit"), // This child can be everything. I want to choose a beautiful Text Widget
+                                                                    style: ElevatedButton
+                                                                        .styleFrom(
+                                                                      textStyle: TextStyle(
+                                                                          fontSize:
+                                                                              14,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                      minimumSize: Size(
+                                                                          200,
+                                                                          100), //change size of this beautiful button
+                                                                      // We can change style of this beautiful elevated button thanks to style prop
+                                                                      // surface color
+                                                                      shadowColor:
+                                                                          Colors
+                                                                              .grey, //shadow prop is a very nice prop for every button or card widgets.
+                                                                      elevation:
+                                                                          5,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .purple[900], // we can set elevation of this beautiful button
+                                                                      side: BorderSide(
+                                                                          color: Color(0xff4a148c), //change border color
+                                                                          width: 2, //change border width
+                                                                          style: BorderStyle.solid), // change border side of this beautiful button
+                                                                      shape:
+                                                                          RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(30), //change border radius of this beautiful button thanks to BorderRadius.circular function
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        });
+                                                  }, //This prop for beautiful expressions
+                                                  child: Text(
+                                                      "Submit Score"), // This child can be everything. I want to choose a beautiful Text Widget
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    textStyle: TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                    minimumSize: Size(200,
+                                                        100), //change size of this beautiful button
+                                                    // We can change style of this beautiful elevated button thanks to style prop
+                                                    // surface color
+                                                    shadowColor: Colors
+                                                        .grey, //shadow prop is a very nice prop for every button or card widgets.
+                                                    elevation:
+                                                        5, // we can set elevation of this beautiful button
+                                                    backgroundColor:
+                                                        Colors.purple[800],
+                                                    side: BorderSide(
+                                                        color: Color(
+                                                            0xff6a1b9a), //change border color
+                                                        width:
+                                                            2, //change border width
+                                                        style: BorderStyle
+                                                            .solid), // change border side of this beautiful button
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30), //change border radius of this beautiful button thanks to BorderRadius.circular function
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              // Add a text button labeled "EXPLORE" with transparent foreground color and an accent color for the text
+                                              SizedBox(
+                                                width: 145,
+                                                height: 40,
+                                                child: ElevatedButton(
+
+                                                  onPressed:
+                                                      _newGame, 
+                                                  child: Text(
+                                                      "Try again"), // This child can be everything. I want to choose a beautiful Text Widget
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    textStyle: TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                    minimumSize: Size(200,
+                                                        100), //change size of this beautiful button
+                                                    // We can change style of this beautiful elevated button thanks to style prop
+                                                    // surface color
+                                                    shadowColor: Colors
+                                                        .grey, //shadow prop is a very nice prop for every button or card widgets.
+                                                    elevation: 5,
+                                                    backgroundColor: Colors
+                                                            .purple[
+                                                        800], // we can set elevation of this beautiful button
+                                                    side: BorderSide(
+                                                        color: Color(
+                                                            0xff6a1b9a), //change border color
+                                                        width:
+                                                            2, //change border width
+                                                        style: BorderStyle
+                                                            .solid), // change border side of this beautiful button
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30), //change border radius of this beautiful button thanks to BorderRadius.circular function
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    // Add a small space between the card and the next widget
+                                    Container(height: 5),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // child: Container(
+                            //   height: height / 4,
+                            //   width: width / 2,
+                            //   decoration: BoxDecoration(
+                            //       color: Colors.white,
+                            //       borderRadius: BorderRadius.circular(12),
+                            //       boxShadow: [
+                            //         BoxShadow(
+                            //             blurRadius: 1,
+                            //             spreadRadius: 2,
+                            //             color: Colors.black26)
+                            //       ]),
+                            //   child: Column(
+                            //     mainAxisAlignment: MainAxisAlignment.center,
+                            //     children: [
+                            //       Text("Score: " + playerScore.toString()),
+                            //       ElevatedButton(
+                            //           onPressed: () {
+                            //             showDialog(
+                            //                 context: context,
+                            //                 builder: (context) {
+                            //                   return AlertDialog(
+                            //                     title:
+                            //                         Text('Enter mobile number'),
+                            //                     content: TextFormField(
+                            //                       controller: mobile,
+                            //                       decoration: InputDecoration(
+                            //                           hintText: "Mobile"),
+                            //                       validator: (value) {
+                            //                         if (value == null ||
+                            //                             value.isEmpty) {
+                            //                           return 'Please enter some text';
+                            //                         } else if (value.length !=
+                            //                             10) {
+                            //                           return 'Please enter valid mobile number';
+                            //                         }
+                            //                         return null;
+                            //                       },
+                            //                     ),
+                            //                     actions: [
+                            //                       ElevatedButton(
+                            //                           onPressed: () async {
+                            //                             try {
+                            //                               // Open sheet
+                            //                               final sheet =
+                            //                                   await gsheets
+                            //                                       .spreadsheet(
+                            //                                           sheetsId);
+                            //                               var workSheet = sheet
+                            //                                   .worksheetById(
+                            //                                       worksheetId);
+
+                            //                               // Insert data into sheet
+                            //                               insertData(
+                            //                                   int.parse(mobile
+                            //                                       .value.text),
+                            //                                   playerScore,
+                            //                                   workSheet!);
+                            //                               ScaffoldMessenger.of(
+                            //                                       context)
+                            //                                   .showSnackBar(
+                            //                                 const SnackBar(
+                            //                                     content: Text(
+                            //                                         'Data received successfully !')),
+                            //                               );
+                            //                             } catch (e) {
+                            //                               ScaffoldMessenger.of(
+                            //                                       context)
+                            //                                   .showSnackBar(
+                            //                                 const SnackBar(
+                            //                                     content: Text(
+                            //                                         'Unexpected error occured !')),
+                            //                               );
+                            //                             }
+
+                            //                             Navigator.pop(context);
+                            //                             resetGame();
+                            //                           },
+                            //                           child: Text("Submit"))
+                            //                     ],
+                            //                   );
+                            //                 });
+                            //           },
+                            //           child: Text("Submit Score")),
+                            //       ElevatedButton(
+                            //           onPressed: resetGame,
+                            //           child: Text("Try again")),
+                            //     ],
+                            //   ),
+                            // ),
+                          ),
+                        )),
+
               Positioned(
                 right: 20,
                 top: 20,

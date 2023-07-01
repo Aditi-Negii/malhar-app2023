@@ -33,9 +33,11 @@ List<Sprite> dino = [
 ];
 
 enum DinoState {
+  welcome,
   jumping,
   running,
   dead,
+  
 }
 
 class Dino extends GameObject {
@@ -93,5 +95,10 @@ class Dino extends GameObject {
   void die() {
     currentSprite = dino[5];
     state = DinoState.dead;
+  }
+
+  void welcome() {
+    currentSprite = dino[5];
+    state = DinoState.welcome;
   }
 }
