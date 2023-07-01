@@ -104,14 +104,14 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                       widget.drawerController.hideDrawer();
                     },
                   ),
-                  // ListTile(
-                  //   leading: Icon(Icons.videogame_asset_rounded),
-                  //   title: const Text('Dino'),
-                  //   onTap: () {
-                  //     Get.to(DinoRunWindow());
-                  //     widget.drawerController.hideDrawer();
-                  //   },
-                  // ),
+                  ListTile(
+                    leading: Icon(Icons.videogame_asset_rounded),
+                    title: const Text('Dino'),
+                    onTap: () {
+                      Get.to(DinoRunWindow());
+                      widget.drawerController.hideDrawer();
+                    },
+                  ),
                   ListTile(
                     leading: Icon(Icons.work),
                     title: const Text('Workforce'),
