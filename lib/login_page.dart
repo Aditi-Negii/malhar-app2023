@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp(
-      options: FirebaseOptions(
+      options: const FirebaseOptions(
         apiKey: "AIzaSyCWWXxhpPp907y2qdiRaTpIQ-mxmWlKL6A",
         appId: "1:455163449554:android:940203d14dc92231af1d0b",
         messagingSenderId: "455163449554",
@@ -68,15 +68,15 @@ class _LoginPageState extends State<LoginPage> {
         title: Text(
           "",
           style: GoogleFonts.openSans(
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                   color: Color.fromARGB(179, 4, 3, 3),
                   fontSize: 25,
                   fontWeight: FontWeight.w600)),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => HomeScreen())),
+              MaterialPageRoute(builder: (context) => const HomeScreen())),
         ),
         backgroundColor: Colors.white,
       ),
@@ -117,13 +117,13 @@ class _LoginPageState extends State<LoginPage> {
                               hintText: "Email",
                               errorBorder: UnderlineInputBorder(
                                 borderRadius: BorderRadius.circular(6.0),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.red,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 8.0),
+                          const SizedBox(height: 8.0),
                           TextFormField(
                             controller: _passwordTextController,
                             focusNode: _focusPassword,
@@ -135,15 +135,15 @@ class _LoginPageState extends State<LoginPage> {
                               hintText: "Password",
                               errorBorder: UnderlineInputBorder(
                                 borderRadius: BorderRadius.circular(6.0),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.red,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 24.0),
+                          const SizedBox(height: 24.0),
                           _isProcessing
-                              ? CircularProgressIndicator()
+                              ? const CircularProgressIndicator()
                               : Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -182,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                                             
                                           }
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           'Sign In',
                                           style: TextStyle(color: Colors.white),
                                         ),
@@ -198,7 +198,7 @@ class _LoginPageState extends State<LoginPage> {
               );
             }
 
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           },

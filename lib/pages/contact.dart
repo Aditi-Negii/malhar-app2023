@@ -57,7 +57,7 @@ class _ContactState extends State<Contact> {
                             
 
                ) )),
-        backgroundColor: Color.fromARGB(255, 41, 1, 42),
+        backgroundColor: const Color.fromARGB(255, 41, 1, 42),
       ),
           body: Container(
             height: MediaQuery.of(context).size.height,
@@ -196,7 +196,7 @@ class _ContactState extends State<Contact> {
                             child : TextFormField(
                             cursorColor: const Color.fromRGBO(36, 27, 80, 1),
                             style : GoogleFonts.poppins(
-                                  color: Color.fromARGB(255, 7, 1, 41),
+                                  color: const Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400,
                                 ), 
@@ -239,7 +239,7 @@ class _ContactState extends State<Contact> {
                             height:35,
                             child :TextFormField(
                              style : GoogleFonts.poppins(
-                                  color: Color.fromARGB(255, 7, 1, 41),
+                                  color: const Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400,
                                 ), 
@@ -286,7 +286,7 @@ class _ContactState extends State<Contact> {
                             height:75,
                             child :TextFormField(
                              style : GoogleFonts.poppins(
-                                  color: Color.fromARGB(255, 7, 1, 41),
+                                  color: const Color.fromARGB(255, 7, 1, 41),
                                   fontSize: 13,
                                   fontWeight: FontWeight.w400,
                                 ), 
@@ -354,8 +354,8 @@ class _ContactState extends State<Contact> {
                                             height: 70,
                                             width: 150,
                                             text: 'SUBMIT',
-                                            gradient: LinearGradient(colors: [Color.fromARGB(255, 199, 65, 154),Color.fromARGB(255, 64, 4, 72), ]),
-                                            selectedGradientColor: LinearGradient(
+                                            gradient: const LinearGradient(colors: [Color.fromARGB(255, 199, 65, 154),Color.fromARGB(255, 64, 4, 72), ]),
+                                            selectedGradientColor: const LinearGradient(
                                                 colors: [Colors.pinkAccent, Colors.purpleAccent]),
                                             isReverse: true,
                                             selectedTextColor: Colors.black,
@@ -365,7 +365,7 @@ class _ContactState extends State<Contact> {
                                               letterSpacing: 5,
                                               color: Colors.white,
                                               fontWeight: FontWeight.w300),
-                                            animationDuration: Duration(milliseconds: 5000),
+                                            animationDuration: const Duration(milliseconds: 5000),
                                           ),
                             ), /*ElevatedButton(
                               onPressed: () async {
