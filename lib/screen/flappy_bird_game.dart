@@ -175,7 +175,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
             child: Container(
               width: min(width, screenDimen['x']!),
               height: min(height, screenDimen['y']!),
-              color: Color.fromARGB(0, 228, 22, 22),
+              color: const Color.fromARGB(0, 228, 22, 22),
               child: Stack(
                 children: [
                   //get new background
@@ -231,7 +231,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     // Display an image at the top of the card that fills the width of the card and has a height of 160 pixels
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                     ),
                                     Center(
@@ -284,7 +284,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           // Add a row with two buttons spaced apart and aligned to the right side of the card
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 50,
                                           ),
                                           Row(
@@ -380,19 +380,19 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
 
                                                                 isDense: true,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15),
 
                                                                 enabledBorder: OutlineInputBorder(
-                                                                    borderSide: BorderSide(
+                                                                    borderSide: const BorderSide(
                                                                         color: Colors
                                                                             .white),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             5)),
                                                                 focusedBorder: OutlineInputBorder(
-                                                                    borderSide: BorderSide(
+                                                                    borderSide: const BorderSide(
                                                                         color: Colors
                                                                             .deepPurple),
                                                                     borderRadius:
@@ -454,16 +454,16 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                                           context);
                                                                       resetGame();
                                                                     }, //This prop for beautiful expressions
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         "Submit"), // This child can be everything. I want to choose a beautiful Text Widget
                                                                     style: ElevatedButton
                                                                         .styleFrom(
-                                                                      textStyle: TextStyle(
+                                                                      textStyle: const TextStyle(
                                                                           fontSize:
                                                                               14,
                                                                           fontWeight:
                                                                               FontWeight.bold),
-                                                                      minimumSize: Size(
+                                                                      minimumSize: const Size(
                                                                           200,
                                                                           100), //change size of this beautiful button
                                                                       // We can change style of this beautiful elevated button thanks to style prop
@@ -476,7 +476,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                                       backgroundColor:
                                                                           Colors
                                                                               .purple[900], // we can set elevation of this beautiful button
-                                                                      side: BorderSide(
+                                                                      side: const BorderSide(
                                                                           color: Color(0xff4a148c), //change border color
                                                                           width: 2, //change border width
                                                                           style: BorderStyle.solid), // change border side of this beautiful button
@@ -493,15 +493,15 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                           );
                                                         });
                                                   }, //This prop for beautiful expressions
-                                                  child: Text(
+                                                  child: const Text(
                                                       "Submit Score"), // This child can be everything. I want to choose a beautiful Text Widget
                                                   style:
                                                       ElevatedButton.styleFrom(
-                                                    textStyle: TextStyle(
+                                                    textStyle: const TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.bold),
-                                                    minimumSize: Size(200,
+                                                    minimumSize: const Size(200,
                                                         100), //change size of this beautiful button
                                                     // We can change style of this beautiful elevated button thanks to style prop
                                                     // surface color
@@ -511,7 +511,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                         5, // we can set elevation of this beautiful button
                                                     backgroundColor:
                                                         Colors.purple[800],
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                         color: Color(
                                                             0xff6a1b9a), //change border color
                                                         width:
@@ -534,15 +534,15 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                 child: ElevatedButton(
                                                   onPressed:
                                                       resetGame, //This prop for beautiful expressions
-                                                  child: Text(
+                                                  child: const Text(
                                                       "Try again"), // This child can be everything. I want to choose a beautiful Text Widget
                                                   style:
                                                       ElevatedButton.styleFrom(
-                                                    textStyle: TextStyle(
+                                                    textStyle: const TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.bold),
-                                                    minimumSize: Size(200,
+                                                    minimumSize: const Size(200,
                                                         100), //change size of this beautiful button
                                                     // We can change style of this beautiful elevated button thanks to style prop
                                                     // surface color
@@ -552,7 +552,7 @@ class _FlappyBirdGameState extends State<FlappyBirdGame> {
                                                     backgroundColor: Colors
                                                             .purple[
                                                         800], // we can set elevation of this beautiful button
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                         color: Color(
                                                             0xff6a1b9a), //change border color
                                                         width:

@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const Spacer(),
                       IconButton(
                           onPressed: () {
-                            Get.to(CalendarScreen());
+                            Get.to(const CalendarScreen());
                           },
                           icon: const Icon(
                             Icons.calendar_month_outlined,
@@ -174,15 +174,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   Expanded(
                       child: GestureDetector(
                     child: Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 224, 191, 243), borderRadius: BorderRadius.circular(4)),
-                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(color: const Color.fromARGB(255, 224, 191, 243), borderRadius: BorderRadius.circular(4)),
+                      padding: const EdgeInsets.all(16),
                       child: Image.asset(
                         "assets/images/message bg 1.png",
                         fit: BoxFit.fitWidth,
                       ),
                     ),
                     onTap: () {
-                      Get.to(FlappyWindow());
+                      Get.to(const FlappyWindow());
                     },
                   )),
                   // const Text("Popular Events", style: TextStyle(
@@ -278,7 +278,7 @@ class EventTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         margin: const EdgeInsets.only(right: 16),
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 173, 107, 179),
+            color: const Color.fromARGB(255, 173, 107, 179),
             borderRadius: BorderRadius.circular(12)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -317,7 +317,7 @@ class PopularEventTile extends StatelessWidget {
       height: 100,
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 161, 78, 142),
+          color: const Color.fromARGB(255, 161, 78, 142),
           borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: <Widget>[
