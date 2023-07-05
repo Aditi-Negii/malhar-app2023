@@ -1,7 +1,7 @@
 import 'package:animate_gradient/animate_gradient.dart';
-// import 'package:events/events_dept_page.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:malhar_2023/pages/events/events_dept_page.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
@@ -27,61 +27,54 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  //SizedBox
-
-                  //CircleAvatar
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  //  for (int j = 1; j < 3;j++)
+                  
                   if (i == 1)
                     Text(
                       'Dastaan-e-Filmy',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style: GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
+                 
                     ),
                   if (i == 2)
                     Text(
                       'Mere Sapno ki Kahani',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style: GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
 
                   //Text
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  
                   if (i == 1)
                     Text(
                       "In eliminations, participants select two Bollywood characters and create a storyline. Finals consists of a breathtaking theatrical wonder featuring dance, drama, and music, featuring 8 teams creating a unique cinematic world with unique character combinations and original storylines.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
                   if (i == 2)
                     Text(
                       "The event features a captivating duet between dancers and narrators, focusing on the theme of 'Sapne', a dream-related theme. The narrator narrates the story, while the classical dancer portrays the theme through movement and instrumental music.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
-                  //Text
-                  const SizedBox(
-                    height: 35,
-                  ), //SizedBox
+         
                   SizedBox(
                     width: 300,
                     child: Container(
@@ -90,14 +83,16 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Click here for more info",
-                            style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                            style: GoogleFonts.ptSans(
+                           color: Colors.deepPurple,
+                         
+                          fontWeight: FontWeight.bold
+                        ),
                           ),
                         ),
                       ),
@@ -125,15 +120,20 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                     children: [
                       Text(
                         "No. of participants: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style:GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2 per team",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                           GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -141,15 +141,20 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                     children: [
                       Text(
                         "Open to: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "Contingents and PRNC (Not outstation)",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -157,15 +162,20 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                     children: [
                       Text(
                         "Time Duration:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2.5 hours, Performance Time: 3-4 min ",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -173,15 +183,20 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                     children: [
                       Text(
                         "Location:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         " Foyer",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        ),
                       )
                     ],
                   ),
@@ -193,12 +208,12 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Tap to flip back",
-                            style: TextStyle(
+                            style: GoogleFonts.robotoCondensed(
                                 color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -239,7 +254,11 @@ class _CrossoverEventsPage extends State<CrossoverEventsPage> {
           backgroundColor: Color(0xff311b92),
           title: Text(
             "Crossover Events",
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: GoogleFonts.ptSans(
+                        color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold
+                      ),
           ),
         ),
       ),

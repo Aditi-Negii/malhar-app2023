@@ -1,6 +1,7 @@
 import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:malhar_2023/pages/events/events_dept_page.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
@@ -26,80 +27,74 @@ class _LaEventsPage extends State<LaEventsPage> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  //SizedBox
-
-                  //CircleAvatar
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  //  for (int j = 1; j < 3;j++)
+                
                   if (i == 1)
                     Text(
                       'Fictional Frenzy',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style:GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   if (i == 2)
                     Text(
                       'News Flash',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style: GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   if (i == 3)
                     Text(
                       'Stuck in a J.A.M',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style: GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
 
                   //Text
-                  const SizedBox(
-                    height: 10,
-                  ),
+                 
                   if (i == 1)
                     Text(
                       "In eliminations, participants are assigned characters from popular sitcoms with absurd charges to defend their cases in courtrooms, using wit and intellect they impress the audience with crisp and delightful arguments. In finals top 10 fictional characters face off in a thrilling battle, paired up in teams to demonstrate their character as epitome of innocence. An unexpected surprise element adds excitement, and strategic arguments are crucial for triumph.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
                   if (i == 2)
                     Text(
                       "Experience an exhilarating contest where you must convince judges that your absurd news headline is genuine news. Compete in various genres and styles assigned to win. The grand finale features unexpected twists and turns, leaving the audience wanting more after each of the 15 performances.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style:GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
                   //Text
                   if (i == 3)
                     Text(
                       " Experience quick thinkers, nimble speakers, and masters of the clock in action in J.A.M., a challenging and entertaining event where participants must speak for a full minute without hesitation or deviation. Only 6 participants will qualify for the final round, showcasing creativity and spontaneity in a time-bound and intense competition.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
-                  const SizedBox(
-                    height: 35,
-                  ), //SizedBox
+                  //SizedBox
                   SizedBox(
                     width: 300,
                     child: Container(
@@ -108,14 +103,16 @@ class _LaEventsPage extends State<LaEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Click here for more info",
-                            style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                            style: GoogleFonts.ptSans(
+                           color: Colors.deepPurple,
+                         
+                          fontWeight: FontWeight.bold
+                        ),
                           ),
                         ),
                       ),
@@ -143,15 +140,20 @@ class _LaEventsPage extends State<LaEventsPage> {
                     children: [
                       Text(
                         "No. of participants: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2 per team",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -159,15 +161,20 @@ class _LaEventsPage extends State<LaEventsPage> {
                     children: [
                       Text(
                         "Open to: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "Contingents and PRNC (Not outstation)",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -175,15 +182,20 @@ class _LaEventsPage extends State<LaEventsPage> {
                     children: [
                       Text(
                         "Time Duration:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2.5 hours, Performance Time: 3-4 min ",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -191,15 +203,20 @@ class _LaEventsPage extends State<LaEventsPage> {
                     children: [
                       Text(
                         "Location:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         " Foyer",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -211,14 +228,16 @@ class _LaEventsPage extends State<LaEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Tap to flip back",
-                            style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                            style:GoogleFonts.ptSans(
+                           color: Colors.deepPurple,
+                         
+                          fontWeight: FontWeight.bold
+                        ),
                           ),
                         ),
                       ),
@@ -257,7 +276,11 @@ class _LaEventsPage extends State<LaEventsPage> {
           backgroundColor: Color(0xff311b92),
           title: Text(
             "LA Events",
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: GoogleFonts.ptSans(
+                        color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold
+                      ),
           ),
         ),
       ),

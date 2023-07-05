@@ -5,7 +5,7 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
 import 'package:malhar_2023/dino_run.dart';
 import 'package:malhar_2023/pages/blog.dart';
-import 'package:malhar_2023/pages/buzzer_page.dart';
+
 import 'package:malhar_2023/pages/contact.dart';
 import 'package:malhar_2023/pages/events/events_dept_page.dart';
 import 'package:malhar_2023/pages/workforce.dart';
@@ -130,14 +130,7 @@ class _DrawerWrapperState extends State<DrawerWrapper> {
                       widget.drawerController.hideDrawer();
                     },
                   ),
-                  ListTile(
-                    leading: Icon(Icons.work),
-                    title: const Text('Buzzer'),
-                    onTap: () {
-                      Get.to( BuzzerPage());
-                      widget.drawerController.hideDrawer();
-                    },
-                  ),
+            
                   ListTile(
                     leading: Icon(Icons.people),
                     title: const Text('Contact us'),

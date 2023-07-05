@@ -1,6 +1,7 @@
 import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:malhar_2023/pages/events/events_dept_page.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
@@ -26,80 +27,74 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  //SizedBox
-
-                  //CircleAvatar
-                  const SizedBox(
-                    height: 10,
-                  ),
+                 
                   //  for (int j = 1; j < 3;j++)
                   if (i == 1)
                     Text(
                       '(Mal)Har ke Jeetne Wale ko Baazigar Kehte Hain',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style:GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   if (i == 2)
                     Text(
                       'Malharcade',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style: GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   if (i == 3)
                     Text(
                       'Gigglymics',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.purple[900],
-                        fontWeight: FontWeight.w500,
-                      ), //Textstyle
+                      style:GoogleFonts.ptSans(
+                      
+                          fontSize: 24,
+                         color: Colors.purple[900],
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
 
-                  //Text
-                  const SizedBox(
-                    height: 10,
-                  ),
+                
                   if (i == 1)
                     Text(
                       "Participants will explore the \"Eye of the Storm\" theme in their short films, capturing chaos and calmness while championing a social cause.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
                   if (i == 2)
                     Text(
                       "Malharcade is a dual round gaming tournament meant to challenge your coordination and strategy.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
                   //Text
                   if (i == 3)
                     Text(
                       " A single round competition features participants presenting humorous school experiences, showcasing real stories and spirited competition, enjoying an afternoon of reminiscing and showcasing the chaotic school life.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.deepPurple.shade900,
-                      ), //Textstyle
+                      style: GoogleFonts.robotoCondensed(
+                          color: Colors.deepPurple.shade900,
+                          fontSize: 16,
+                        )
                     ),
-                  const SizedBox(
-                    height: 35,
-                  ), //SizedBox
+                  //SizedBox
                   SizedBox(
                     width: 300,
                     child: Container(
@@ -108,14 +103,16 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Click here for more info",
-                            style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                            style: GoogleFonts.ptSans(
+                           color: Colors.deepPurple,
+                         
+                          fontWeight: FontWeight.bold
+                        ),
                           ),
                         ),
                       ),
@@ -143,15 +140,20 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                     children: [
                       Text(
                         "No. of participants: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style:  GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2 per team",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -159,15 +161,19 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                     children: [
                       Text(
                         "Open to: ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
-                      ),
+                        style:  GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )),
                       Text(
                         "Contingents and PRNC (Not outstation)",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                             GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -175,15 +181,20 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                     children: [
                       Text(
                         "Time Duration:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style:  GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         "2.5 hours, Performance Time: 3-4 min ",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                             GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -191,15 +202,20 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                     children: [
                       Text(
                         "Location:",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.purple[900]),
+                        style:  GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       ),
                       Text(
                         " Foyer",
                         style:
-                            TextStyle(fontSize: 15, color: Colors.purple[900]),
+                             GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
                       )
                     ],
                   ),
@@ -211,14 +227,16 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child: const Center(
+                      child:  Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Tap to flip back",
-                            style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                            style: GoogleFonts.ptSans(
+                           color: Colors.deepPurple,
+                         
+                          fontWeight: FontWeight.bold
+                        ),
                           ),
                         ),
                       ),
@@ -257,7 +275,11 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
           backgroundColor: Color(0xff311b92),
           title: Text(
             "Malhar Spaces Events",
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: GoogleFonts.ptSans(
+                        color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold
+                      ),
           ),
         ),
       ),
