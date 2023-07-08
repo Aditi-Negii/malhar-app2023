@@ -7,27 +7,27 @@ import 'sprite.dart';
 
 List<Sprite> dino = [
   Sprite()
-    ..imagePath = "assets/images/dino/dino_1.png"
+    ..imagePath = "assets/images/puddles/puddles_1.png"
     ..imageWidth = 88
     ..imageHeight = 94,
   Sprite()
-    ..imagePath = "assets/images/dino/dino_2.png"
+    ..imagePath = "assets/images/puddles/puddles_2.png"
     ..imageWidth = 88
     ..imageHeight = 94,
   Sprite()
-    ..imagePath = "assets/images/dino/dino_3.png"
+    ..imagePath = "assets/images/puddles/puddles_3.png"
     ..imageWidth = 88
     ..imageHeight = 94,
   Sprite()
-    ..imagePath = "assets/images/dino/dino_4.png"
+    ..imagePath = "assets/images/puddles/puddles_4.png"
     ..imageWidth = 88
     ..imageHeight = 94,
   Sprite()
-    ..imagePath = "assets/images/dino/dino_5.png"
+    ..imagePath = "assets/images/puddles/puddles_5.png"
     ..imageWidth = 88
     ..imageHeight = 94,
   Sprite()
-    ..imagePath = "assets/images/dino/dino_6.png"
+    ..imagePath = "assets/images/puddles/puddles_6.png"
     ..imageWidth = 88
     ..imageHeight = 94,
 ];
@@ -37,7 +37,6 @@ enum DinoState {
   jumping,
   running,
   dead,
-  
 }
 
 class Dino extends GameObject {

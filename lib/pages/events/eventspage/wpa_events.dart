@@ -105,7 +105,6 @@ class _WpaEventsPage extends State<WpaEventsPage> {
                         )),
                   if (i == 3)
                     Text(
-                      
                         "In eliminations, participants choose a dance form from a list of Western folk and classical dance styles provided and send their routine. In finals, the event features a mashup of three songs, blending three diverse dance forms, with one segment dedicated to Western classical/folk dance chosen for eliminations, and performers choosing their preferred Western forms for the remaining two segments.",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.robotoCondensed(
@@ -129,17 +128,14 @@ class _WpaEventsPage extends State<WpaEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child:  Center(
+                      child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Click here for more info",
-                            style:GoogleFonts.ptSans(
-                           color: Colors.deepPurple,
-                         
-                          fontWeight: FontWeight.bold
-                        ),
-                             
+                            style: GoogleFonts.ptSans(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -165,88 +161,117 @@ class _WpaEventsPage extends State<WpaEventsPage> {
                 children: [
                   Wrap(
                     children: [
-                      Text(
-                        "No. of participants: ",
-                        style: 
-                        GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                        
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("No. of participants: ",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("2 per team",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900]))
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Open to: ",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "Contingents and PRNC (Not outstation)",
-                        style:
-                             GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Open to: ",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("Contingents and PRNCs",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900]))
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Time Duration:",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Type number:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      if (i == 1)
+                        Text("Group Event(4-7 members)",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 2)
+                        Text("Duet Event",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 3)
+                        Text("Group Event(9-19 members)",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 4)
+                        Text("Group Event(2-4 members)",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900]))
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Location:",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        " Foyer",
-                        style:
-                             GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Audience:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("Allowed for finals",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      if (i == 4)
+                        Text(" Allowed",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900]))
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text("Event Cap:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("Eliminations: 20 entries, Finals: 10 entries",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      if (i == 4)
+                        Text(" Eliminations: 10 entries, Finals: 10 entries",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900]))
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text("Max reg. per contingent:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("1 entry",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900]))
                     ],
                   ),
                   SizedBox(
@@ -257,16 +282,14 @@ class _WpaEventsPage extends State<WpaEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child:  Center(
+                      child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Tap to flip back",
-                            style:GoogleFonts.ptSans(
-                           color: Colors.deepPurple,
-                         
-                          fontWeight: FontWeight.bold
-                        ),
+                            style: GoogleFonts.ptSans(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),

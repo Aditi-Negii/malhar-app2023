@@ -29,16 +29,14 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                 
                   //  for (int j = 1; j < 3;j++)
                   if (i == 1)
                     Text(
                       '(Mal)Har ke Jeetne Wale ko Baazigar Kehte Hain',
                       textAlign: TextAlign.center,
-                      style:GoogleFonts.ptSans(
-                      
-                          fontSize: 24,
-                         color: Colors.purple[900],
+                      style: GoogleFonts.ptSans(
+                        fontSize: 24,
+                        color: Colors.purple[900],
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -47,9 +45,8 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                       'Malharcade',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.ptSans(
-                      
-                          fontSize: 24,
-                         color: Colors.purple[900],
+                        fontSize: 24,
+                        color: Colors.purple[900],
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -57,43 +54,38 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                     Text(
                       'Gigglymics',
                       textAlign: TextAlign.center,
-                      style:GoogleFonts.ptSans(
-                      
-                          fontSize: 24,
-                         color: Colors.purple[900],
+                      style: GoogleFonts.ptSans(
+                        fontSize: 24,
+                        color: Colors.purple[900],
                         fontWeight: FontWeight.w900,
                       ),
                     ),
 
-                
                   if (i == 1)
                     Text(
-                      "Participants will explore the \"Eye of the Storm\" theme in their short films, capturing chaos and calmness while championing a social cause.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.robotoCondensed(
+                        "Participants will explore the \"Eye of the Storm\" theme in their short films, capturing chaos and calmness while championing a social cause.",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.robotoCondensed(
                           color: Colors.deepPurple.shade900,
                           fontSize: 16,
-                        )
-                    ),
+                        )),
                   if (i == 2)
                     Text(
-                      "Malharcade is a dual round gaming tournament meant to challenge your coordination and strategy.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.robotoCondensed(
+                        "Malharcade is a dual round gaming tournament meant to challenge your coordination and strategy.",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.robotoCondensed(
                           color: Colors.deepPurple.shade900,
                           fontSize: 16,
-                        )
-                    ),
+                        )),
                   //Text
                   if (i == 3)
                     Text(
-                      " A single round competition features participants presenting humorous school experiences, showcasing real stories and spirited competition, enjoying an afternoon of reminiscing and showcasing the chaotic school life.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.robotoCondensed(
+                        " A single round competition features participants presenting humorous school experiences, showcasing real stories and spirited competition, enjoying an afternoon of reminiscing and showcasing the chaotic school life.",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.robotoCondensed(
                           color: Colors.deepPurple.shade900,
                           fontSize: 16,
-                        )
-                    ),
+                        )),
                   //SizedBox
                   SizedBox(
                     width: 300,
@@ -103,16 +95,14 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child:  Center(
+                      child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Click here for more info",
                             style: GoogleFonts.ptSans(
-                           color: Colors.deepPurple,
-                         
-                          fontWeight: FontWeight.bold
-                        ),
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -138,85 +128,98 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                 children: [
                   Wrap(
                     children: [
-                      Text(
-                        "No. of participants: ",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Open to: ",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("Contingents and PRNCs",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Open to: ",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )),
-                      Text(
-                        "Contingents and PRNC (Not outstation)",
-                        style:
-                             GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Type number:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      if (i == 1)
+                        Text("Group Event",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 2)
+                        Text("Individual Event",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 3)
+                        Text("Solo Event",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900]))
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Time Duration:",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
-                        style:
-                             GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Audience:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text(" Allowed for finals",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
                     ],
                   ),
                   Wrap(
                     children: [
-                      Text(
-                        "Location:",
-                        style:  GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        " Foyer",
-                        style:
-                             GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
+                      Text("Event Cap:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      if (i == 1)
+                        Text(" 12 Entries",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 2)
+                        Text(" 6 Entries",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                      if (i == 3)
+                        Text(" 10 entries",
+                            style: GoogleFonts.robotoCondensed(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.purple[900])),
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text("Max reg. per contingent: ",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("1 entry",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
                     ],
                   ),
                   SizedBox(
@@ -227,16 +230,14 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
                           borderRadius: BorderRadius.all(Radius.circular(20))
                           //more than 50% of width makes circle
                           ),
-                      child:  Center(
+                      child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Tap to flip back",
                             style: GoogleFonts.ptSans(
-                           color: Colors.deepPurple,
-                         
-                          fontWeight: FontWeight.bold
-                        ),
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -276,10 +277,7 @@ class _MalharSpacesEventsPage extends State<MalharSpacesEventsPage> {
           title: Text(
             "Malhar Spaces Events",
             style: GoogleFonts.ptSans(
-                        color: Colors.white,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold
-                      ),
+                color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -139,36 +139,49 @@ class _LaEventsPage extends State<LaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "No. of participants: ",
-                        style: GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
-                    ],
-                  ),
-                  Wrap(
-                    children: [
-                      Text(
                         "Open to: ",
+                        style:GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+              
+                      Text(
+                        "Contingents and PRNCs",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==3)
+                      Text(
+                        "Contingents, PRNCs and OTSEs",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text(
+                        "Type number:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      
                       Text(
-                        "Contingents and PRNC (Not outstation)",
+                        "Individual Event",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -181,15 +194,27 @@ class _LaEventsPage extends State<LaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Time Duration:",
+                        "Audience:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      
                       Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
+                        " Allowed for finals",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      
+                      if(i==3)
+                      Text(
+                        " Allowed",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -199,25 +224,71 @@ class _LaEventsPage extends State<LaEventsPage> {
                       )
                     ],
                   ),
-                  Wrap(
+                   Wrap(
                     children: [
                       Text(
-                        "Location:",
+                        "Event Cap:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        " Foyer",
+                        " Eliminations: 20 entries, Finals: 10 entries",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
-                      )
+                      ),
+                    if(i==2)
+                      Text(
+                        " Pre-submissions: 30",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==3)
+                      Text(
+                        " Eliminations: 30 entries, Finals: 6 entries",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    ],
+                  ),
+
+                   Wrap(
+                    children: [
+                      Text(
+                        "Max reg. per contingent: ",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      
+                      Text(
+                        "1 entry",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                     
                     ],
                   ),
                   SizedBox(

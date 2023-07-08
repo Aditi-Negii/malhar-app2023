@@ -138,27 +138,7 @@ class _FaEventsPage extends State<FaEventsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Wrap(
-                    children: [
-                      Text(
-                        "No. of participants: ",
-                        style:GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
-                    ],
-                  ),
+                  
                   Wrap(
                     children: [
                       Text(
@@ -169,8 +149,19 @@ class _FaEventsPage extends State<FaEventsPage> {
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        "Contingents and PRNC (Not outstation)",
+                        "Contingents and PRNCs",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                      Text(
+                        "Contingents and PRNCs and OTSE",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -183,15 +174,26 @@ class _FaEventsPage extends State<FaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Time Duration:",
+                        "Type number:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
+                        "Group Event",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                
+                      Text(
+                        "Individual Event",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -204,7 +206,7 @@ class _FaEventsPage extends State<FaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Location:",
+                        "Audience:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -212,7 +214,7 @@ class _FaEventsPage extends State<FaEventsPage> {
                         )
                       ),
                       Text(
-                        " Foyer",
+                        " Not Allowed",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -220,6 +222,63 @@ class _FaEventsPage extends State<FaEventsPage> {
                             color: Colors.purple[900]
                         )
                       )
+                    ],
+                  ),
+                   Wrap(
+                    children: [
+                      Text(
+                        "Event Cap:",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==1)
+                      Text(
+                        " 20 Teams",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                      Text(
+                        " 20 Entries",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    ],
+                  ),
+
+                   Wrap(
+                    children: [
+                      Text(
+                        "Max reg. per contingent: ",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      
+                      Text(
+                        "1 entry",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                     
                     ],
                   ),
                   SizedBox(

@@ -117,27 +117,6 @@ class _IpaEventsPage extends State<IpaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "No. of participants: ",
-                        style: GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
-                    ],
-                  ),
-                  Wrap(
-                    children: [
-                      Text(
                         "Open to: ",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
@@ -145,8 +124,52 @@ class _IpaEventsPage extends State<IpaEventsPage> {
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        "Contingents and PRNC (Not outstation)",
+                        "Contingents, PRNCs and OTSE",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==2)
+                      Text(
+                        "Contingents, PRNCs",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      )
+
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text(
+                        "Type number: ",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==1)
+                      Text(
+                        "Group Event(6-10 per group)",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==2)
+                      Text(
+                        "Group Event(2-8 per group)",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -159,7 +182,7 @@ class _IpaEventsPage extends State<IpaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Time Duration:",
+                        "Audience:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -167,7 +190,7 @@ class _IpaEventsPage extends State<IpaEventsPage> {
                         )
                       ),
                       Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
+                        "Allowed for finals",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -180,22 +203,49 @@ class _IpaEventsPage extends State<IpaEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Location:",
+                        "Event Cap:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        " Foyer",
+                        " Eliminations: 20 entries, Finals: 12 entries",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
-                      )
+                      ),
+                      if(i==2)
+                      Text(
+                        " Eliminations: 20 entries, Finals: 10 entries",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+
+
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text("Max reg. per contingent:",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple[900])),
+                      Text("1 entry",
+                          style: GoogleFonts.robotoCondensed(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.purple[900]))
                     ],
                   ),
                   SizedBox(

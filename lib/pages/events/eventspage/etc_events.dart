@@ -140,27 +140,6 @@ class _EtcEventsPage extends State<EtcEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "No. of participants: ",
-                        style:GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      ),
-                      Text(
-                        "2 per team",
-                        style:
-                            GoogleFonts.robotoCondensed(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.purple[900]
-                        )
-                      )
-                    ],
-                  ),
-                  Wrap(
-                    children: [
-                      Text(
                         "Open to: ",
                         style:GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
@@ -168,8 +147,52 @@ class _EtcEventsPage extends State<EtcEventsPage> {
                             color: Colors.purple[900]
                         )
                       ),
+              
                       Text(
-                        "Contingents and PRNC (Not outstation)",
+                        "Contingents and PRNC",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                    ],
+                  ),
+                  Wrap(
+                    children: [
+                      Text(
+                        "Type number:",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==1)
+                      Text(
+                        "Group Event(4 participants per team)",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                if(i==2)
+                      Text(
+                        "Group Event(4 participants per team)",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==3)
+                      Text(
+                        "Individual Event",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -182,15 +205,36 @@ class _EtcEventsPage extends State<EtcEventsPage> {
                   Wrap(
                     children: [
                       Text(
-                        "Time Duration:",
+                        "Audience:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        "2.5 hours, Performance Time: 3-4 min ",
+                        " Allowed for finals",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==2)
+                      Text(
+                        " Allowed for both eliminations and finals",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==3)
+                      Text(
+                        " Allowed",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
@@ -200,25 +244,71 @@ class _EtcEventsPage extends State<EtcEventsPage> {
                       )
                     ],
                   ),
-                  Wrap(
+                   Wrap(
                     children: [
                       Text(
-                        "Location:",
+                        "Event Cap:",
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.bold,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
                       ),
+                      if(i==1)
                       Text(
-                        " Foyer",
+                        " 25 Entries",
                         style:
                             GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
                             fontSize: 16,
                             color: Colors.purple[900]
                         )
-                      )
+                      ),
+                    if(i==2)
+                      Text(
+                        " 25 Teams",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      if(i==3)
+                      Text(
+                        " 12 entries",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    ],
+                  ),
+
+                   Wrap(
+                    children: [
+                      Text(
+                        "Max reg. per contingent: ",
+                        style: GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                      
+                      Text(
+                        "1 entry",
+                        style:
+                            GoogleFonts.robotoCondensed(
+                          fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.purple[900]
+                        )
+                      ),
+                    
+                     
                     ],
                   ),
                   SizedBox(
